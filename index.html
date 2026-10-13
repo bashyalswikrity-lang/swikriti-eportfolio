@@ -1,0 +1,757 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Swikriti Bashyal · CET257 ePortfolio</title>
+<meta name="description" content="Swikriti Bashyal’s CET257 Enterprise Project ePortfolio: UI/UX and Design Lead of Team Speed, Lift Right 360° manual handling training simulation.">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+/* Layout concept: a bright, airy single page. White ground, soft pastel blocks that carry meaning (project phases and evidence types each have their own colour), a sunny yellow for actions and highlights, one blue for links and bars. Friendly rounded type, sentence-case headings, real photo up front. Single bright theme by choice. */
+:root{
+  color-scheme:light;
+  --bg:#FFFFFF; --tint:#F5F8FE; --ink:#1B2030; --ink-2:#555F76; --line:#E1E6F0;
+  --blue:#2457F5; --blue-soft:#E3EBFF; --blue-ink:#1B3EA8;
+  --sun:#FFC83D; --sun-soft:#FFF1C4; --sun-ink:#7A5200;
+  --mint-soft:#D8F3E3; --mint-ink:#0E5A38; --mint-line:#86CFA8;
+  --coral-soft:#FFE1D9; --coral-ink:#9C2B14; --coral-line:#F2A08E;
+  --lilac-soft:#ECE6FF; --lilac-ink:#47309F;
+  --none:#6A7389; --focus:#1D4ED8;
+  --f-head:'Bricolage Grotesque','Segoe UI',system-ui,-apple-system,Roboto,sans-serif;
+  --f-body:'Figtree','Segoe UI',system-ui,-apple-system,Roboto,sans-serif;
+  --r:18px; --r-sm:10px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:1.05rem;line-height:1.6;-webkit-text-size-adjust:100%}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--blue)}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:4px}
+.wrap{width:100%;max-width:1160px;margin-inline:auto;padding-inline:clamp(16px,4vw,40px)}
+.skip{position:absolute;left:-999px;top:8px;background:var(--sun);color:var(--ink);padding:8px 14px;z-index:50;font-weight:700;border-radius:99px}
+.skip:focus{left:8px}
+
+/* ---------- navigation ---------- */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(8px)}
+.nav .wrap{display:flex;align-items:center;gap:20px;min-height:62px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--f-head);font-weight:700;font-size:1.2rem;letter-spacing:-.01em;white-space:nowrap;color:var(--ink)}
+.brand svg{width:32px;height:32px;flex:none}
+.nav ul{display:flex;gap:2px;list-style:none;margin:0 0 0 auto;padding:0;overflow-x:auto;scrollbar-width:none;min-width:0}
+.nav ul::-webkit-scrollbar{display:none}
+.nav li a{display:block;padding:8px 14px;border-radius:99px;text-decoration:none;font-size:.95rem;font-weight:600;color:var(--ink-2);white-space:nowrap}
+.nav li a:hover{background:var(--tint);color:var(--ink)}
+.nav li a[aria-current="true"]{background:var(--sun);color:var(--ink)}
+@media (max-width:760px){.brand span{display:none}}
+
+/* ---------- hero ---------- */
+.hero{background:var(--bg);padding-block:clamp(36px,6vw,80px) clamp(28px,4vw,48px)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.8fr);gap:clamp(32px,6vw,72px);align-items:center}
+.eyebrow{display:inline-block;font-size:.9rem;font-weight:700;color:var(--blue-ink);background:var(--blue-soft);padding:6px 14px;border-radius:99px;margin:0 0 20px}
+h1{font-family:var(--f-head);font-weight:700;font-size:clamp(3rem,8.4vw,5.8rem);line-height:1;letter-spacing:-.03em;margin:0 0 18px;text-wrap:balance}
+.role{font-size:clamp(1.15rem,2.2vw,1.45rem);font-weight:600;margin:0 0 20px}
+.role span{background:linear-gradient(transparent 58%,var(--sun) 58%);padding:0 4px;margin:0 -4px}
+.hero p.intro{color:var(--ink-2);max-width:54ch;margin:0 0 28px;font-size:1.12rem}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 19px;border-radius:99px;font-weight:700;font-size:1rem;text-decoration:none;border:2px solid transparent;cursor:pointer;font-family:inherit;line-height:1.3}
+.btn.primary{background:var(--sun);color:var(--ink)}
+.btn.primary:hover{background:#FFD566}
+.btn.line{border-color:var(--ink);color:var(--ink);background:#fff}
+.btn.line:hover{background:var(--tint)}
+.hero figure{margin:0}
+.hero figure button{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in;border-radius:28px}
+.hero figure img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:28px;box-shadow:16px 16px 0 var(--sun)}
+figcaption{font-size:.9rem;color:var(--ink-2);margin-top:22px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.facts{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));margin:clamp(36px,5vw,60px) 0 0;padding:0;list-style:none;border-top:2px solid var(--ink)}
+.facts li{padding:18px 16px 0 0}
+.facts li + li{padding-left:18px;border-left:1px solid var(--line)}
+.facts b{display:block;font-family:var(--f-head);font-size:clamp(1.9rem,3.4vw,2.6rem);line-height:1.05;font-weight:700;letter-spacing:-.02em;color:var(--ink);font-variant-numeric:tabular-nums}
+.facts span{display:block;font-size:.92rem;color:var(--ink-2);margin-top:6px;line-height:1.4}
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:minmax(0,1fr)}
+  .hero figure{margin-right:14px}
+  .facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .facts li,.facts li + li{padding:16px 12px 14px 0;border-left:0;border-bottom:1px solid var(--line)}
+  .facts li:nth-child(even){padding-left:16px;border-left:1px solid var(--line)}
+  .facts li:last-child{grid-column:1/-1}
+}
+
+/* ---------- sections ---------- */
+.block{padding-block:clamp(52px,7vw,96px)}
+.block.alt{background:var(--tint)}
+.head{max-width:62ch;margin-bottom:clamp(26px,4vw,44px)}
+h2{font-family:var(--f-head);font-weight:700;font-size:clamp(2rem,4.6vw,3.1rem);line-height:1.06;letter-spacing:-.025em;margin:0 0 14px;text-wrap:balance}
+h3{font-family:var(--f-head);font-weight:600;font-size:1.4rem;line-height:1.2;letter-spacing:-.01em;margin:0 0 10px;text-wrap:balance}
+h4{font-family:var(--f-body);font-size:1rem;font-weight:700;color:var(--ink);margin:0 0 12px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.lead{font-size:1.15rem;color:var(--ink-2);margin:0;max-width:62ch}
+p{margin:0 0 1em;max-width:68ch}
+.cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(28px,4vw,60px)}
+.cols.wide-left{grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr)}
+.cols > *{min-width:0}
+@media (max-width:860px){.cols,.cols.wide-left{grid-template-columns:minmax(0,1fr)}}
+.rule-top{background:var(--bg);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px}
+.block.alt .rule-top{background:#fff}
+
+/* evidence tags: colour = type of evidence */
+.tag{display:inline-block;font-size:.8rem;font-weight:700;line-height:1.2;padding:4px 11px;background:var(--tint);color:var(--ink);border-radius:99px;text-decoration:none;white-space:nowrap}
+a.tag:hover{text-decoration:underline;text-underline-offset:3px}
+.tag.c-team{background:var(--blue-soft);color:var(--blue-ink)}
+.tag.c-client{background:var(--coral-soft);color:var(--coral-ink)}
+.tag.c-plan{background:var(--mint-soft);color:var(--mint-ink)}
+.tag.c-delivery{background:var(--lilac-soft);color:var(--lilac-ink)}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+
+/* definition lists */
+dl.meta{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:12px 28px;margin:0}
+dl.meta dt{font-weight:700;color:var(--ink-2);font-size:.95rem}
+dl.meta dd{margin:0}
+
+/* team list */
+.team{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.team li{padding:16px 20px;border:1px solid var(--line);border-radius:var(--r);background:var(--bg)}
+.team .who{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:center}
+.team strong{font-family:var(--f-head);font-size:1.25rem;font-weight:600}
+.team .r{font-size:.92rem;color:var(--ink-2);font-weight:600}
+.team p{margin:6px 0 0;font-size:.95rem;color:var(--ink-2)}
+.team .me{background:var(--sun-soft);border-color:#F3D77C}
+.team .me .who::after{content:"This portfolio";font-size:.78rem;font-weight:700;background:var(--sun);color:var(--ink);padding:3px 10px;border-radius:99px}
+
+/* tables */
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r);background:#fff}
+table{border-collapse:collapse;width:100%;font-size:1rem}
+th,td{text-align:left;vertical-align:top;padding:16px 20px;border-bottom:1px solid var(--line)}
+th{font-size:.92rem;font-weight:700;color:var(--ink);background:var(--blue-soft)}
+tr:last-child td{border-bottom:0}
+td:first-child{color:var(--ink-2)}
+.tbl table{min-width:560px}
+
+/* run steps */
+ol.steps{list-style:none;counter-reset:s;margin:0;padding:0;display:grid;gap:10px}
+ol.steps li{counter-increment:s;display:grid;grid-template-columns:2.6rem minmax(0,1fr);gap:12px;align-items:start;padding:14px 18px;background:#fff;border:1px solid var(--line);border-radius:var(--r)}
+ol.steps li::before{content:counter(s);font-family:var(--f-head);font-weight:700;font-size:1.1rem;line-height:2.2rem;width:2.2rem;height:2.2rem;text-align:center;border-radius:50%;background:var(--sun);color:var(--ink)}
+ol.steps b{font-weight:700}
+.rules{display:grid;gap:14px;margin:0;padding:0;list-style:none}
+.rules li{display:flex;gap:14px;align-items:baseline}
+.rules b{font-family:var(--f-head);font-size:1.7rem;line-height:1;min-width:6.9rem;white-space:nowrap;font-weight:700;color:var(--blue);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.rules span{color:var(--ink-2)}
+
+/* skills */
+.skill{padding:14px 0;border-bottom:1px solid var(--line)}
+.skill:first-of-type{padding-top:0}
+.skill-top{display:flex;justify-content:space-between;gap:12px;align-items:center}
+.skill-top strong{font-weight:700}
+.seg{display:flex;gap:4px;flex:none}
+.seg i{width:22px;height:10px;background:var(--line);border-radius:99px;display:block}
+.seg i.on{background:var(--blue)}
+.skill p{margin:4px 0 0;font-size:.95rem;color:var(--ink-2)}
+.skill .n{font-size:.88rem;font-weight:700;color:var(--ink-2);min-width:2.2rem;text-align:right}
+.bars{display:grid;gap:14px;margin:0;padding:0;list-style:none}
+.bars li{display:grid;grid-template-columns:minmax(0,10rem) minmax(0,1fr) 2.2rem;gap:12px;align-items:center;font-size:.98rem}
+.bars .track{height:14px;background:var(--line);border-radius:99px;overflow:hidden}
+.bars .fill{display:block;height:100%;background:var(--blue);border-radius:99px}
+.bars li.me .fill{background:var(--sun)}
+.bars .v{font-weight:700;text-align:right;font-variant-numeric:tabular-nums}
+@media (max-width:520px){.bars li{grid-template-columns:minmax(0,1fr) 2.2rem}.bars .track{grid-column:1/-1;grid-row:2}}
+.contrib{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,3vw,28px);margin-top:clamp(36px,5vw,64px)}
+.contrib > div{border-radius:var(--r);padding:24px}
+.contrib > div:nth-child(1){background:var(--blue-soft)}
+.contrib > div:nth-child(2){background:var(--coral-soft)}
+.contrib > div:nth-child(3){background:var(--mint-soft)}
+.contrib p{font-size:.98rem;color:var(--ink)}
+@media (max-width:860px){.contrib{grid-template-columns:minmax(0,1fr)}}
+
+/* ---------- weekly log ---------- */
+.gantt{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:6px;margin-bottom:14px}
+.gantt .ph{grid-row:1;font-size:.82rem;font-weight:700;padding-bottom:6px;white-space:nowrap;overflow:hidden;border-bottom:4px solid;color:var(--ink)}
+.ph.p-form,.gantt button.p-form{--c:var(--blue-soft)}
+.ph.p-define,.gantt button.p-define{--c:var(--mint-soft)}
+.ph.p-deliver,.gantt button.p-deliver{--c:var(--sun-soft)}
+.ph.p-present,.gantt button.p-present{--c:var(--coral-soft)}
+.ph.p-evaluate,.gantt button.p-evaluate{--c:var(--lilac-soft)}
+.gantt .ph.p-form{border-color:#9DB7FF}.gantt .ph.p-define{border-color:var(--mint-line)}.gantt .ph.p-deliver{border-color:var(--sun)}.gantt .ph.p-present{border-color:var(--coral-line)}.gantt .ph.p-evaluate{border-color:#B9A6FF}
+.gantt button{grid-row:2;min-width:0;padding:12px 0 10px;border:2px solid transparent;background:var(--c);color:var(--ink);font-family:var(--f-head);font-size:1.1rem;font-weight:700;cursor:pointer;border-radius:12px;display:flex;flex-direction:column;align-items:center;gap:0;line-height:1.1}
+.gantt button small{font-family:var(--f-body);font-size:.7rem;font-weight:600;color:var(--ink-2)}
+.gantt button:hover{border-color:var(--ink-2)}
+.gantt button[aria-selected="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.gantt button[aria-selected="true"] small{color:#D8DCE8}
+@media (max-width:560px){.gantt button small{display:none}.gantt button{padding:14px 0 12px;font-size:1rem}.gantt{gap:4px}}
+.log-tools{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:20px;font-size:.95rem;color:var(--ink-2)}
+.week{background:#fff;border:1px solid var(--line);border-radius:24px;padding:clamp(20px,3.4vw,40px)}
+.week + .week{margin-top:20px}
+.week .kick{display:flex;gap:10px;flex-wrap:wrap;align-items:center;font-size:.95rem;font-weight:600;color:var(--ink-2);margin-bottom:10px}
+.week .kick b{background:var(--sun);color:var(--ink);padding:3px 12px;border-radius:99px;font-weight:700}
+.week h3{font-size:clamp(1.6rem,3.2vw,2.2rem);max-width:30ch;letter-spacing:-.02em}
+.week-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(22px,4vw,52px);margin-top:20px}
+.week-grid > *{min-width:0}
+@media (max-width:860px){.week-grid{grid-template-columns:minmax(0,1fr)}}
+.week ul.did{margin:0 0 20px;padding-left:1.2rem;display:grid;gap:10px}
+.week ul.did li::marker{color:var(--blue)}
+.refl{background:var(--tint);border-radius:var(--r);padding:22px 24px}
+.refl dl{margin:0;display:grid;gap:16px}
+.refl dt{font-size:.9rem;font-weight:700;color:var(--blue-ink);margin-bottom:2px}
+.refl dd{margin:0;font-size:.98rem}
+.shots{display:flex;flex-wrap:wrap;gap:14px;margin-top:8px}
+.shot{margin:0;width:min(100%,270px)}
+.shot button{display:block;width:100%;padding:0;border:1px solid var(--line);background:#fff;cursor:zoom-in;border-radius:12px;overflow:hidden}
+.shot img{width:100%;aspect-ratio:3/2;object-fit:cover;object-position:top left}
+.shot figcaption{font-size:.84rem;margin-top:8px;display:block}
+.wk-nav{display:flex;justify-content:space-between;gap:12px;margin-top:26px;padding-top:20px;border-top:1px solid var(--line)}
+.btn.ghost{background:#fff;border-color:var(--line);color:var(--ink);padding:9px 18px;font-size:.92rem}
+.btn.ghost:hover{border-color:var(--ink);background:#fff}
+.btn.ghost[disabled]{opacity:.4;cursor:default;border-color:var(--line)}
+.js .week[hidden]{display:none}
+
+/* ---------- evidence ---------- */
+.filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px}
+.chip{font-family:var(--f-body);font-size:.95rem;font-weight:700;padding:9px 18px;border:2px solid var(--line);background:#fff;color:var(--ink);border-radius:99px;cursor:pointer}
+.chip:hover{border-color:var(--ink-2)}
+.chip[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.chip span{font-size:.82rem;opacity:.7;margin-left:6px}
+.ev-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,330px),1fr));gap:18px}
+.ev{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px;display:flex;flex-direction:column;gap:10px;scroll-margin-top:84px;min-width:0}
+.ev:target{outline:3px solid var(--sun);outline-offset:3px}
+.ev[hidden]{display:none}
+.ev-top{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.ev-cat{font-size:.82rem;font-weight:600;color:var(--ink-2);text-align:right}
+.ev h3{font-size:1.3rem;margin:0}
+.ev p{margin:0;font-size:.97rem;color:var(--ink-2)}
+.ev .used{font-size:.86rem;color:var(--ink-2);font-weight:600}
+.ev-files{margin-top:auto;display:grid;gap:8px;padding-top:8px}
+.frow{display:flex;flex-wrap:nowrap;gap:6px 10px;align-items:center;justify-content:space-between;border-top:1px solid var(--line);padding-top:10px;font-size:.95rem}
+.frow .lbl{font-weight:600;min-width:0;flex:1 1 0}
+.frow .acts{display:flex;gap:6px;flex:none}
+.mini{font-size:.82rem;font-weight:700;padding:5px 12px;white-space:nowrap;border:2px solid var(--line);border-radius:99px;text-decoration:none;background:#fff;color:var(--ink);cursor:pointer;font-family:inherit}
+.mini.pri{background:var(--sun);color:var(--ink);border-color:var(--sun)}
+.mini:hover{border-color:var(--ink)}
+.mini.pri:hover{background:#FFD566;border-color:#FFD566}
+.thumbs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.thumbs button{padding:0;border:1px solid var(--line);background:#fff;cursor:zoom-in;border-radius:10px;overflow:hidden;position:relative}
+.thumbs img{width:100%;aspect-ratio:3/2;object-fit:cover;object-position:top left}
+.thumbs b{position:absolute;left:4px;bottom:4px;background:#fff;color:var(--ink);font-size:.68rem;font-weight:700;padding:1px 7px;border-radius:99px}
+.ev-hero{border:1px solid var(--line);padding:0;background:none;cursor:zoom-in;border-radius:12px;overflow:hidden}
+.ev-hero img{width:100%;aspect-ratio:4/3;object-fit:cover}
+
+/* ---------- client ---------- */
+ol.contacts{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+ol.contacts li{display:grid;grid-template-columns:7.5rem minmax(0,1fr);gap:4px 16px;padding:16px 20px;background:#fff;border-radius:var(--r);border:1px solid var(--line)}
+ol.contacts time{font-size:.92rem;color:var(--coral-ink);font-weight:700;padding-top:2px}
+ol.contacts strong{font-weight:700;display:block}
+ol.contacts span.d{color:var(--ink-2);font-size:.97rem;display:block}
+ol.contacts .tags{margin-top:8px}
+@media (max-width:520px){ol.contacts li{grid-template-columns:minmax(0,1fr)}}
+.score{display:flex;align-items:baseline;gap:12px;margin-bottom:16px}
+.score b{font-family:var(--f-head);font-size:4.4rem;line-height:.95;font-weight:700;letter-spacing:-.03em;background:linear-gradient(transparent 62%,var(--sun) 62%)}
+.score span{color:var(--ink-2)}
+.quote{margin:0 0 12px;padding:14px 18px;background:var(--sun-soft);border-radius:var(--r-sm);color:var(--ink);font-size:.98rem;max-width:62ch}
+.recs{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:16px;margin:0;padding:0;list-style:none}
+.recs li{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:20px 22px}
+.recs b{display:block;font-family:var(--f-head);font-size:1.2rem;font-weight:600;margin-bottom:4px}
+.recs span{font-size:.97rem;color:var(--ink-2)}
+.sub{margin-top:clamp(40px,6vw,72px)}
+
+/* ---------- reflection ---------- */
+details.rf{border-bottom:1px solid var(--line)}
+details.rf:first-of-type{border-top:1px solid var(--line)}
+details.rf summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 16px;align-items:center;padding:22px 0}
+details.rf summary::-webkit-details-marker{display:none}
+details.rf summary h3{margin:0;font-size:1.55rem}
+details.rf summary em{grid-column:1;font-style:normal;color:var(--ink-2);font-size:1rem}
+details.rf summary::after{content:"+";grid-column:2;grid-row:1/3;font-size:1.6rem;font-weight:600;line-height:1;width:40px;height:40px;display:grid;place-items:center;border-radius:50%;background:var(--blue-soft);color:var(--blue-ink)}
+details.rf[open] summary::after{content:"\2212";background:var(--sun);color:var(--ink)}
+details.rf summary:hover h3{text-decoration:underline;text-decoration-color:var(--sun);text-underline-offset:5px;text-decoration-thickness:3px}
+.rf-body{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(22px,4vw,52px);padding:0 0 32px}
+.rf-body ul{margin:0;padding-left:1.2rem;display:grid;gap:10px}
+.rf-body ul li::marker{color:var(--blue)}
+.rf-body .look{background:var(--tint);border-radius:var(--r);padding:20px 22px;align-self:start}
+.rf-body .look p{margin:0;font-size:1rem}
+@media (max-width:860px){.rf-body{grid-template-columns:minmax(0,1fr)}}
+.concl{margin-top:32px;padding:26px 30px;background:var(--sun-soft);border-radius:var(--r);max-width:none}
+.concl h4{margin-bottom:6px}
+.concl p{margin:0;max-width:78ch}
+
+/* ---------- outcomes ---------- */
+.fr{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 0}
+.fr i{font-style:normal;font-size:.78rem;font-weight:700;padding:4px 0;width:2.9rem;text-align:center;background:var(--mint-soft);color:var(--mint-ink);border-radius:99px}
+.bays{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px}
+.bay{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;height:64px;padding:0;font-family:var(--f-body);font-weight:700;font-size:.88rem;border:2px solid;border-radius:14px;cursor:pointer;min-width:0}
+.bay i{font-style:normal;font-size:1.05rem;line-height:1}
+.bay.pass{background:var(--mint-soft);color:var(--mint-ink);border-color:var(--mint-soft)}
+.bay.part{background:var(--sun-soft);color:var(--sun-ink);border-color:var(--sun)}
+.bay.fail{background:var(--coral-soft);color:var(--coral-ink);border-color:var(--coral-line)}
+.bay.none{background:#fff;color:var(--none);border-color:#B9C0D0;border-style:dashed}
+.bay[aria-pressed="true"]{box-shadow:0 0 0 3px var(--ink)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;margin:16px 0 12px;font-size:.92rem;color:var(--ink-2)}
+.legend span{display:inline-flex;gap:6px;align-items:center}
+.legend i{font-style:normal;font-weight:800}
+.legend .p{color:var(--mint-ink)}.legend .w{color:var(--sun-ink)}.legend .f{color:var(--coral-ink)}.legend .n{color:var(--none)}
+.bay-detail{min-height:3.4em;padding:14px 18px;background:#fff;border:1px solid var(--line);font-size:.98rem;border-radius:var(--r-sm)}
+.sec{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.sec li{display:grid;grid-template-columns:5.6rem minmax(0,1fr);gap:4px 14px;padding:14px 18px;background:#fff;border:1px solid var(--line);border-radius:var(--r-sm)}
+.pill{font-size:.8rem;font-weight:700;padding:3px 10px;border-radius:99px;height:fit-content;text-align:center}
+.pill.high{background:var(--coral-soft);color:var(--coral-ink)}
+.pill.med{background:var(--sun-soft);color:var(--sun-ink)}
+.sec b{font-weight:700;display:block}
+.sec span{font-size:.95rem;color:var(--ink-2)}
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+@media (max-width:640px){.two{grid-template-columns:minmax(0,1fr)}}
+.box{border-radius:var(--r);padding:22px 24px}
+.box ul{margin:0;padding-left:1.2rem;display:grid;gap:8px;font-size:1rem}
+.box.done{background:var(--mint-soft)}
+.box.open{background:var(--sun-soft)}
+
+/* ---------- footer & lightbox ---------- */
+footer{background:var(--tint);color:var(--ink-2);padding-block:52px 40px;font-size:.95rem;border-top:1px solid var(--line)}
+footer h4{color:var(--ink)}
+footer .refs{margin:0;padding:0;list-style:none;display:grid;gap:10px;max-width:80ch}
+footer a{color:var(--blue)}
+.foot-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:clamp(24px,5vw,64px)}
+@media (max-width:760px){.foot-grid{grid-template-columns:minmax(0,1fr)}}
+.copy{max-width:none;margin-top:32px;padding-top:18px;border-top:1px solid var(--line);font-size:.88rem}
+dialog.lb{border:0;padding:0;background:transparent;max-width:min(96vw,1200px);width:100%;max-height:94vh;color:var(--ink)}
+dialog.lb::backdrop{background:rgba(27,32,48,.7)}
+.lb-in{background:#fff;border-radius:var(--r);padding:14px;display:grid;gap:12px;max-height:92vh}
+.lb-in img{max-height:76vh;width:auto;max-width:100%;margin:0 auto;object-fit:contain}
+.lb-bar{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap;font-size:.95rem}
+.lb-bar a,.lb-bar button{color:var(--ink);background:#fff;border:2px solid var(--line);border-radius:99px;padding:6px 16px;cursor:pointer;font:inherit;font-weight:700;text-decoration:none}
+.lb-bar a:hover,.lb-bar button:hover{border-color:var(--ink)}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+
+/* Swikriti's variant: violet accent, 8-week log, design-work blocks */
+:root{--blue:#5B3FF2;--blue-soft:#ECE8FF;--blue-ink:#3A22B5;--lilac-soft:#DDF0FA;--lilac-ink:#0B5575;--focus:#4B2FD6}
+.gantt{grid-template-columns:repeat(8,minmax(0,1fr))}
+.gantt .ph.p-form{border-color:#B7A8FF}
+.nxt{margin:0 0 22px;font-size:1rem}
+.pend{border:2px dashed #C9CFDD;border-radius:var(--r);padding:16px 20px;background:#fff;color:var(--ink-2);font-size:.95rem}
+.pend b{display:block;color:var(--ink);margin-bottom:2px}
+.dw{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(20px,4vw,48px);padding-block:clamp(22px,3vw,34px);border-top:1px solid var(--line);align-items:start}
+.dw:first-of-type{border-top:0;padding-top:0}
+.dw h3{font-family:var(--f-head);font-size:1.4rem;margin:6px 0 8px;line-height:1.2}
+.dw p{margin:0 0 10px;color:var(--ink-2)}
+.dw .wk{display:inline-block;font-size:.8rem;font-weight:700;background:var(--sun-soft);color:var(--sun-ink);padding:3px 12px;border-radius:99px}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:12px}
+.gal figure{margin:0}
+.gal button{display:block;width:100%;padding:0;border:1px solid var(--line);background:#fff;cursor:zoom-in;border-radius:12px;overflow:hidden}
+.gal img{width:100%;aspect-ratio:3/2;object-fit:cover;object-position:top left}
+.gal figcaption{font-size:.82rem;color:var(--ink-2);margin-top:6px}
+.swatches{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:14px 0}
+.swatch{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}
+.swatch i{display:block;height:56px}
+.swatch div{padding:8px 10px;font-size:.82rem;line-height:1.35}
+.swatch b{display:block;font-size:.88rem}
+.swatch code{font-size:.8rem;color:var(--ink-2)}
+.logo-box{border:1px solid var(--line);border-radius:12px;padding:18px;background:#fff;margin:0 0 6px;max-width:420px}
+.logo-box img{width:100%;height:auto}
+.rcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:16px}
+.rcard{border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;background:#fff}
+.rcard h3{font-family:var(--f-head);font-size:1.2rem;margin:0 0 10px}
+.rcard h4{margin:0 0 6px}
+.rcard ul{margin:0 0 14px;padding-left:1.1em;font-size:.95rem;color:var(--ink-2)}
+.rcard li{margin-bottom:5px}
+.stat-note{margin-top:12px;font-size:.9rem;color:var(--ink-2)}
+.fb td:nth-child(3){white-space:nowrap}
+.run{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.run li{display:grid;grid-template-columns:minmax(0,9.5rem) minmax(0,1fr);gap:14px;padding:12px 0;border-top:1px solid var(--line)}
+.run li:first-child{border-top:0}
+.run b{font-family:var(--f-head);color:var(--blue-ink);font-size:1.02rem}
+.run span{color:var(--ink-2)}
+.ev-files .gal{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.ev-files .gal figcaption{font-size:.74rem}
+@media (max-width:480px){.run li{grid-template-columns:minmax(0,1fr);gap:2px}}
+@media (max-width:820px){.dw{grid-template-columns:minmax(0,1fr)}}
+
+</style></head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+<nav class="nav" aria-label="Sections"><div class="wrap">
+ <a class="brand" href="#top"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect width="32" height="32" rx="7" fill="#12233D"/><path d="M9 17l7-7 7 7" fill="none" stroke="#F2B544" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 24l7-7 7 7" fill="none" stroke="#F2B544" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Swikriti Bashyal</span></a>
+ <ul>
+  <li><a href="#about">Profile</a></li><li><a href="#project">Project</a></li><li><a href="#design">Design work</a></li><li><a href="#skills">Skills</a></li>
+  <li><a href="#log">Weekly log</a></li><li><a href="#presenting">Presenting</a></li><li><a href="#evidence">Evidence</a></li><li><a href="#client">Client</a></li>
+  <li><a href="#reflection">Reflection</a></li>
+ </ul>
+</div></nav>
+
+<header class="hero" id="top"><div class="wrap">
+ <div class="hero-grid">
+  <div>
+   <p class="eyebrow">CET257 Enterprise Project · ePortfolio</p>
+   <h1>Swikriti Bashyal</h1>
+   <p class="role">UI/UX and Design Lead, <span>Team Speed</span> (Team 6)</p>
+   <p class="intro">I led the design side of Lift Right, a browser-based 360° manual-handling training simulation built for our client, Sulav G. Raj of Vantec: the research, wireframes, diagrams, brand, website mockups and presentation deck. This portfolio shows what I did each week and the evidence behind it.</p>
+   <div class="btns">
+    <a class="btn primary" href="#design">See my design work</a>
+    <a class="btn line" href="#log">Read the weekly log</a>
+    <a class="btn line" href="https://shilustha71-arch.github.io/teamspeed-prototype/" target="_blank" rel="noopener">Try the prototype &#8599;</a>
+   </div>
+  </div>
+  <figure>
+   <button type="button" data-lb="assets/team-1200.jpg" data-full="evidence/E21_Presentation_Evidence.jpeg" data-cap="E21: Team Speed at the client presentation" aria-label="Open the team photo"><img src="assets/team-1200.jpg" alt="Team Speed standing beside the final Thank You slide at the client presentation" width="1200" height="900"></button>
+   <figcaption><a class="tag c-client" href="#ev-E21">E21</a> Team Speed at the client presentation</figcaption>
+  </figure>
+ </div>
+ <ul class="facts">
+  <li><b>8 of 8</b><span>weekly team meetings attended (E5)</span></li>
+  <li><b>5/5</b><span>my skills-audit rating for UI/UX design and prototyping tools (E2)</span></li>
+  <li><b>20 slides</b><span>in the presentation deck I built (E17)</span></li>
+  <li><b>5/5</b><span>client rating for slides, layout, flow and visual elements (E20)</span></li>
+  <li><b>21</b><span>labelled evidence items, E1 to E21</span></li>
+ </ul>
+</div></header>
+
+<main id="main">
+
+<section class="block" id="about"><div class="wrap">
+ <div class="head"><h2>UI/UX and Design Lead</h2>
+ <p class="lead">My role covered the interface, the brand and the visual side of every deliverable. My audit showed the strongest design background in the team, which is why the Group Roles Report gave me this role.</p></div>
+ <div class="cols wide-left">
+  <div>
+   <dl class="meta">
+    <dt>Student</dt><dd>Swikriti Bashyal</dd>
+    <dt>Role</dt><dd>UI/UX and Design Lead, Team Speed (Team 6)</dd>
+    <dt>Module</dt><dd>CET257 Enterprise Project</dd>
+    <dt>Project</dt><dd>Lift Right: 360° Manual Handling Training Simulation</dd>
+    <dt>Client</dt><dd>Sulav G. Raj, Vantec</dd>
+    <dt>Period</dt><dd>17 July to 4 September 2026 (the eight weekly meetings in the minutes)</dd>
+    <dt>In the presentation</dt><dd>Documentation and Closing Lead: team roles, challenges, roadmap, closing thanks and timekeeping, about 3 of the 20 minutes. <a class="tag c-client" href="#ev-E18">E18</a></dd>
+   </dl>
+  </div>
+  <div><h4>The team</h4><ul class="team"><li class=""><div class="who"><strong>Shilu Chuke</strong><span class="r">Team Leader</span></div><p>Overall coordination, meeting scheduling, client liaison, tracking deliverables against the plan and chairing team decisions.</p></li><li class="me"><div class="who"><strong>Swikriti Bashyal</strong><span class="r">UI/UX and Design Lead</span></div><p>Interface layout and visual design, HUD and screen wireframes, branding and marketing visuals (A6), and documentation quality control.</p></li><li class=""><div class="who"><strong>Sparas Shrestha</strong><span class="r">Backend Developer</span></div><p>Application logic, scoring engine, state management, data persistence and admin reporting.</p></li><li class=""><div class="who"><strong>Namshu Hang Zhyedi Magar</strong><span class="r">Frontend Developer</span></div><p>3D scene and camera, HUD rendering, input handling and integration with the backend logic.</p></li></ul><p style="margin-top:12px;font-size:.88rem;color:var(--ink-2)">Roles from the Group Roles Report <a class="tag c-team" href="#ev-E3">E3</a></p></div>
+ </div>
+</div></section>
+
+<section class="block alt" id="project"><div class="wrap">
+ <div class="head"><h2>Lift Right</h2>
+ <p class="lead">A first-person 360° simulation that runs in a normal browser. A warehouse worker walks a virtual warehouse and is scored in real time on the safety decisions made during a lift.</p></div>
+ <h4>Why it is needed <a class="tag c-plan" href="#ev-E7">E7</a></h4>
+ <div class="tbl"><table><thead><tr><th scope="col">Problem with the current approach</th><th scope="col">How Lift Right responds</th></tr></thead><tbody><tr><td>A one-off classroom induction or a static poster is quickly forgotten once a worker is back on the floor under time pressure.</td><td>The simulation can be repeated in five to ten minutes, so refresher training is cheap enough to actually happen.</td></tr><tr><td>Paper sign-off sheets show that a worker attended a session, not that they can apply the technique.</td><td>Each checkpoint needs an active, scored decision, so a pass reflects demonstrated judgement and not attendance.</td></tr><tr><td>Supervisors have no easy way to see who is competent, only who signed a form.</td><td>The Admin Command Center shows per-worker logins, attempts, time on task and best score, exportable to CSV.</td></tr></tbody></table></div>
+ <div class="cols sub">
+  <div><h4>How a training run works</h4>
+   <ol class="steps">
+    <li><span><b>Sign in.</b> Create a worker account and read the pre-start briefing: W A S D to walk, mouse to look, E to lift.</span></li>
+    <li><span><b>Walk the warehouse.</b> Move between the Loading Dock, Warehouse Floor and Racking Aisle.</span></li>
+    <li><span><b>Clear six checkpoints.</b> Each has a knowledge check, and the HUD shows time, score, zone and the step list.</span></li>
+    <li><span><b>Choose how to move the load.</b> Manual lift, team lift or trolley, offered to suit the weight.</span></li>
+    <li><span><b>See the score.</b> The attempt, time and best score are saved to the worker’s record.</span></li>
+   </ol></div>
+  <div><h4>My part in it</h4>
+   <ul class="rules">
+    <li><b>Look</b><span>The HUD, screens and visual style, from the first wireframes in Week 3 to the HUD mock-ups in the deck.</span></li>
+    <li><b>Plan</b><span>The PACT analysis, Use Case diagram, Flowchart/DFD and System Requirement Analysis for the A1 design pack.</span></li>
+    <li><b>Brand</b><span>The studio’s name, tagline, palette, logo and four website page mockups.</span></li>
+    <li><b>Show</b><span>The 20-slide deck and the closing section of the live presentation.</span></li>
+   </ul>
+   <div class="btns" style="margin-top:20px">
+    <a class="btn primary" href="https://shilustha71-arch.github.io/teamspeed-prototype/" target="_blank" rel="noopener">Open the prototype &#8599;</a>
+    <a class="btn ghost" href="https://shresthasparas.github.io/Team-Speed/TeamSpeedStudios_Website/" target="_blank" rel="noopener">Team Speed Studios site &#8599;</a>
+   </div>
+   <p class="stat-note">The prototype code and scoring engine were built by Sparas Shrestha and Namshu Hang Zhyedi Magar.</p>
+  </div>
+ </div>
+</div></section>
+
+<section class="block" id="design"><div class="wrap">
+ <div class="head"><h2>What I designed, from research to slides</h2>
+ <p class="lead">Six pieces of work, in the order I did them. Each links to its evidence. Select any picture to see it larger.</p></div>
+ <div class="dw"><div><span class="wk">Weeks 1 to 2</span><h3>Research and the PACT analysis</h3><p>I started by reviewing 360° training tools and warehouse safety training, then drafted the PACT analysis (People, Activities, Context, Technology) for the warehouse use case. The finished design pack uses it to explain who Lift Right is for.</p><div class="tags"><a class="tag c-plan" href="#ev-E7">E7</a><a class="tag c-plan" href="#ev-E10">E10</a><a class="tag c-team" href="#ev-E5">E5 · W1–2</a></div></div><div><div class="tbl"><table><thead><tr><th scope="col">PACT user group</th><th scope="col">What was found</th><th scope="col">Design consequence</th></tr></thead><tbody><tr><td><b>Warehouse operatives</b></td><td>Wide range of ages, fitness and gaming experience, including new starters on their first day.</td><td>Controls limited to mouse-look and W-A-S-D, with a short pre-start briefing instead of a long tutorial.</td></tr><tr><td><b>Workers who use English as a second language</b></td><td>The floor is expected to include them.</td><td>Short, plain prompts paired with visual cues such as a highlighted load and marker colour.</td></tr><tr><td><b>Supervisors and training administrators</b></td><td>Time-poor and non-technical. They need a fast answer to who is trained.</td><td>A single summarised Admin Command Center table with a one-click CSV export.</td></tr></tbody></table></div><p class="stat-note">From section 2.1 of the team’s B1 design document (E10).</p></div></div><div class="dw"><div><span class="wk">Week 3</span><h3>Wireframes for the login screen and the HUD</h3><p>My first wireframes covered the landing and login screen and the in-game HUD: a timer, a score, a radar and a step tracker. In the built prototype, the HUD shows a countdown, score and zone name, with a sequence list at the side.</p><p>The wireframe files are not in the submitted folders. The slide shown here is the HUD mock-up I prepared for the deck, which shows the same four elements.</p><div class="tags"><a class="tag c-team" href="#ev-E5">E5 · W3</a><a class="tag c-client" href="#ev-E17">E17</a></div></div><div><div class="gal"><figure><button type="button" data-lb="assets/sl-8-lb.jpg" data-full="evidence/E17_Lift_Right_Presentation.pdf" data-cap="Slide 8: HUD mock-up" aria-label="Open Slide 8: HUD mock-up"><img src="assets/sl-8.jpg" alt="" width="900" height="600" loading="lazy"></button><figcaption>Slide 8: HUD mock-up</figcaption></figure></div></div></div><div class="dw"><div><span class="wk">Week 4</span><h3>Use Case diagram, Flowchart and DFD</h3><p>I completed the Use Case diagram and the Flowchart/DFD for A1, and wrote the System Requirement Analysis explanations that go with them. The project plan marks all A1 design documents complete in Week 4.</p><p>The System Architecture and DFD Level 1 diagrams sit in the same folder. The minutes do not credit them to a named member, so I show them as part of the set, not as my own.</p><div class="tags"><a class="tag c-plan" href="#ev-E8">E8</a><a class="tag c-plan" href="#ev-E9">E9</a><a class="tag c-team" href="#ev-E6">E6</a></div></div><div><div class="gal"><figure><button type="button" data-lb="assets/dg-usecase-lb.jpg" data-full="evidence/E8_Use_Case_Diagram.png" data-cap="Use Case diagram" aria-label="Open Use Case diagram"><img src="assets/dg-usecase.jpg" alt="" width="900" height="600" loading="lazy"></button><figcaption>Use Case diagram</figcaption></figure><figure><button type="button" data-lb="assets/dg-flow-lb.jpg" data-full="evidence/E8_Flowchart_DFD.png" data-cap="Flowchart / DFD" aria-label="Open Flowchart / DFD"><img src="assets/dg-flow.jpg" alt="" width="900" height="600" loading="lazy"></button><figcaption>Flowchart / DFD</figcaption></figure><figure><button type="button" data-lb="assets/dg-arch-lb.jpg" data-full="evidence/E8_System_Architecture.png" data-cap="System Architecture (same folder)" aria-label="Open System Architecture (same folder)"><img src="assets/dg-arch.jpg" alt="" width="900" height="600" loading="lazy"></button><figcaption>System Architecture (same folder)</figcaption></figure><figure><button type="button" data-lb="assets/dg-dfd1-lb.jpg" data-full="evidence/E8_DFD_Level1.png" data-cap="DFD Level 1 (same folder)" aria-label="Open DFD Level 1 (same folder)"><img src="assets/dg-dfd1.jpg" alt="" width="900" height="600" loading="lazy"></button><figcaption>DFD Level 1 (same folder)</figcaption></figure></div></div></div><div class="dw"><div><span class="wk">Weeks 5 to 6</span><h3>Marketing strategy, brand and logo</h3><p>I drafted the zero-budget marketing strategy (LinkedIn, direct outreach, social demo clips, word-of-mouth) and set the brand direction: the name Team Speed Studios, the product name Lift Right, the tagline “Learn safe handling by doing it”, and a palette of deep navy with warm amber that echoes warehouse hazard colours. In Week 6 I finalised the logo and colour palette.</p><p>The finished logo is a navy rounded square with two stacked amber arrows pointing up, for lifting. The wordmark reads TEAM SPEED in bold navy with STUDIOS in spaced amber capitals.</p><div class="tags"><a class="tag c-delivery" href="#ev-E11">E11</a><a class="tag c-delivery" href="#ev-E13">E13</a><a class="tag c-delivery" href="#ev-E15">E15</a></div></div><div><div class="logo-box"><img src="assets/logo.jpg" alt="Team Speed Studios logo: navy square with two amber arrows and the wordmark Team Speed Studios" width="1320" height="288" loading="lazy"></div><div class="swatches"><div class="swatch"><i style="background:#12233D;"></i><div><b>Primary navy</b><code>#12233D</code><br>Header, footer, headings</div></div><div class="swatch"><i style="background:#F2B544;"></i><div><b>Warm amber</b><code>#F2B544</code><br>Buttons, mission band, accents</div></div><div class="swatch"><i style="background:#D97706;"></i><div><b>Dark amber</b><code>#D97706</code><br>Numbers, links, small labels</div></div><div class="swatch"><i style="background:#F6F8FB;border-bottom:1px solid #E1E6F0"></i><div><b>Soft grey-blue</b><code>#F6F8FB</code><br>Page background</div></div><div class="swatch"><i style="background:#FFFFFF;border-bottom:1px solid #E1E6F0"></i><div><b>White</b><code>#FFFFFF</code><br>Cards</div></div></div><p class="stat-note">Style guide from E13. Typography: Poppins (bold) for headings and buttons, Inter for body text.</p></div></div><div class="dw"><div><span class="wk">Weeks 6 and 8</span><h3>Four website mockups</h3><p>I completed mockups for the home, about, demo and contact pages. Each page shares one navigation bar and footer, and a “Try Lift Right” button sits at the top right of every page, so the working prototype is never more than a click away. The numbers on the home page (8 weeks, 4 people, 6 checkpoints) come from the real project, not invented statistics.</p><p>The About and Contact mockups mark photos, quotes and contact details as placeholders, and the document says so. In Week 8 I exported the final mockup files into the A6 folder.</p><div class="tags"><a class="tag c-delivery" href="#ev-E12">E12</a><a class="tag c-delivery" href="#ev-E13">E13</a><a class="tag c-delivery" href="#ev-E15">E15</a></div></div><div><div class="gal"><figure><button type="button" data-lb="assets/mock-home-lb.jpg" data-full="evidence/E12_Mockup_1.png" data-cap="Home" aria-label="Open Home"><img src="assets/mock-home.jpg" alt="" width="900" height="600" loading="lazy"></button><figcaption>Home</figcaption></figure><figure><button type="button" data-lb="assets/mock-about-lb.jpg" data-full="evidence/E12_Mockup_2.png" data-cap="About" aria-label="Open About"><img src="assets/mock-about.jpg" alt="" width="900" height="600" loading="lazy"></button><figcaption>About</figcaption></figure><figure><button type="button" data-lb="assets/mock-demo-lb.jpg" data-full="evidence/E12_Mockup_3.png" data-cap="Demo" aria-label="Open Demo"><img src="assets/mock-demo.jpg" alt="" width="900" height="600" loading="lazy"></button><figcaption>Demo</figcaption></figure><figure><button type="button" data-lb="assets/mock-contact-lb.jpg" data-full="evidence/E12_Mockup_4.png" data-cap="Contact" aria-label="Open Contact"><img src="assets/mock-contact.jpg" alt="" width="900" height="600" loading="lazy"></button><figcaption>Contact</figcaption></figure></div></div></div><div class="dw"><div><span class="wk">Weeks 7 and 8</span><h3>The presentation slide deck</h3><p>I built the full 20-slide deck: problem, solution, objectives, features, architecture, team and roadmap, using the finished branding. After rehearsal feedback I finalised all the slide visuals in Week 8. The client rated slides, layout, flow and visual elements 5 out of 5.</p><div class="tags"><a class="tag c-client" href="#ev-E17">E17</a><a class="tag c-client" href="#ev-E18">E18</a><a class="tag c-client" href="#ev-E20">E20</a></div></div><div><div class="gal"><figure><button type="button" data-lb="assets/sl-1-lb.jpg" data-full="evidence/E17_Lift_Right_Presentation.pdf" data-cap="Slide 1: title" aria-label="Open Slide 1: title"><img src="assets/sl-1.jpg" alt="" width="900" height="600" loading="lazy"></button><figcaption>Slide 1: title</figcaption></figure><figure><button type="button" data-lb="assets/sl-4-lb.jpg" data-full="evidence/E17_Lift_Right_Presentation.pdf" data-cap="Slide 4: the solution" aria-label="Open Slide 4: the solution"><img src="assets/sl-4.jpg" alt="" width="900" height="600" loading="lazy"></button><figcaption>Slide 4: the solution</figcaption></figure><figure><button type="button" data-lb="assets/sl-8-lb.jpg" data-full="evidence/E17_Lift_Right_Presentation.pdf" data-cap="Slide 8: HUD mock-up" aria-label="Open Slide 8: HUD mock-up"><img src="assets/sl-8.jpg" alt="" width="900" height="600" loading="lazy"></button><figcaption>Slide 8: HUD mock-up</figcaption></figure><figure><button type="button" data-lb="assets/sl-12-lb.jpg" data-full="evidence/E17_Lift_Right_Presentation.pdf" data-cap="Slide 12: admin view" aria-label="Open Slide 12: admin view"><img src="assets/sl-12.jpg" alt="" width="900" height="600" loading="lazy"></button><figcaption>Slide 12: admin view</figcaption></figure><figure><button type="button" data-lb="assets/sl-15-lb.jpg" data-full="evidence/E17_Lift_Right_Presentation.pdf" data-cap="Slide 15: Meet the Team" aria-label="Open Slide 15: Meet the Team"><img src="assets/sl-15.jpg" alt="" width="900" height="600" loading="lazy"></button><figcaption>Slide 15: Meet the Team</figcaption></figure><figure><button type="button" data-lb="assets/sl-20-lb.jpg" data-full="evidence/E17_Lift_Right_Presentation.pdf" data-cap="Slide 20: Thank you" aria-label="Open Slide 20: Thank you"><img src="assets/sl-20.jpg" alt="" width="900" height="600" loading="lazy"></button><figcaption>Slide 20: Thank you</figcaption></figure></div></div></div>
+</div></section>
+
+<section class="block alt" id="skills"><div class="wrap">
+ <div class="head"><h2>What I brought to the team</h2>
+ <p class="lead">My skills audit shaped the role. It shows design, documentation and prototyping at the top, and backend and 3D work as areas that belonged to the developers.</p></div>
+ <div class="cols">
+  <div><h4>Skills audit self-ratings <a class="tag c-team" href="#ev-E2">E2</a></h4><div class="skill"><div class="skill-top"><strong>UI/UX design and prototyping tools</strong><span style="display:flex;gap:10px;align-items:center"><span class="seg" role="img" aria-label="5 out of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span><span class="n">5/5</span></span></div><p>Primary tool for wireframes, the website mockups and branding.</p></div><div class="skill"><div class="skill-top"><strong>Written communication and documentation</strong><span style="display:flex;gap:10px;align-items:center"><span class="seg" role="img" aria-label="4 out of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span><span class="n">4/5</span></span></div><p>Wrote the PACT Analysis, the marketing strategy draft and the website mockup documentation.</p></div><div class="skill"><div class="skill-top"><strong>Frontend and UI development</strong><span style="display:flex;gap:10px;align-items:center"><span class="seg" role="img" aria-label="3 out of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span><span class="n">3/5</span></span></div><p>Blocked out early wireframes and contributed to HUD layout decisions.</p></div><div class="skill"><div class="skill-top"><strong>Client-facing communication</strong><span style="display:flex;gap:10px;align-items:center"><span class="seg" role="img" aria-label="3 out of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span><span class="n">3/5</span></span></div><p>Attended client meetings 2 and 3 (E19). Not the primary point of contact.</p></div><div class="skill"><div class="skill-top"><strong>Testing and quality assurance</strong><span style="display:flex;gap:10px;align-items:center"><span class="seg" role="img" aria-label="3 out of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span><span class="n">3/5</span></span></div><p>Reviewed HUD and branding consistency across deliverables before submission.</p></div><div class="skill"><div class="skill-top"><strong>3D and graphics (Three.js, WebGL)</strong><span style="display:flex;gap:10px;align-items:center"><span class="seg" role="img" aria-label="2 out of 5"><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></span><span class="n">2/5</span></span></div><p>Limited 3D experience. Worked from Sparas and Namshu’s scene rather than building it.</p></div><div class="skill"><div class="skill-top"><strong>Project coordination and scheduling</strong><span style="display:flex;gap:10px;align-items:center"><span class="seg" role="img" aria-label="2 out of 5"><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></span><span class="n">2/5</span></span></div><p>Coordinates her own design workstream day to day rather than overall project scheduling.</p></div><div class="skill"><div class="skill-top"><strong>Backend and application logic</strong><span style="display:flex;gap:10px;align-items:center"><span class="seg" role="img" aria-label="1 out of 5"><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></span><span class="n">1/5</span></span></div><p>No backend experience, and not part of her role.</p></div></div>
+  <div>
+   <h4>Tasks owned in the project plan <a class="tag c-team" href="#ev-E6">E6</a></h4>
+   <ul class="bars"><li class=""><span>Shilu Chuke</span><span class="track"><span class="fill" style="width:100%"></span></span><span class="v">11</span></li><li class=""><span>Namshu Hang Zhyedi Magar</span><span class="track"><span class="fill" style="width:82%"></span></span><span class="v">9</span></li><li class="me"><span>Swikriti Bashyal</span><span class="track"><span class="fill" style="width:64%"></span></span><span class="v">7</span></li><li class=""><span>Sparas Shrestha</span><span class="track"><span class="fill" style="width:64%"></span></span><span class="v">7</span></li></ul>
+   <p style="margin-top:14px;font-size:.93rem;color:var(--ink-2)">I own 7 tasks. The plan scheduled my design, diagram and branding work in parallel with the prototype build, because it sat off the critical path.</p>
+  </div>
+ </div>
+ <div class="contrib">
+  <div><h3>Research and design</h3><p>PACT analysis, first wireframes, the Use Case diagram, the Flowchart/DFD and the System Requirement Analysis explanations.</p><div class="tags"><a class="tag c-plan" href="#ev-E7">E7</a><a class="tag c-plan" href="#ev-E8">E8</a><a class="tag c-plan" href="#ev-E9">E9</a></div></div>
+  <div><h3>Brand and marketing</h3><p>The marketing strategy draft, the studio brand and logo, and four website page mockups.</p><div class="tags"><a class="tag c-delivery" href="#ev-E11">E11</a><a class="tag c-delivery" href="#ev-E12">E12</a><a class="tag c-delivery" href="#ev-E13">E13</a><a class="tag c-delivery" href="#ev-E15">E15</a></div></div>
+  <div><h3>Presentation and documentation</h3><p>The 20-slide deck, the closing section of the live presentation, and a consistency check of the HUD and branding across deliverables.</p><div class="tags"><a class="tag c-client" href="#ev-E17">E17</a><a class="tag c-client" href="#ev-E18">E18</a><a class="tag c-team" href="#ev-E2">E2</a></div></div>
+ </div>
+</div></section>
+
+<section class="block" id="log"><div class="wrap">
+ <div class="head"><h2>Eight weeks, week by week</h2>
+ <p class="lead">The log follows the weekly meeting minutes, where my row appears in every week. Select a week, or show all eight at once.</p></div>
+ <div id="log-top" style="scroll-margin-top:80px"></div>
+ <div class="gantt" role="tablist" aria-label="Weeks of the project"><span class="ph p-form" style="grid-column:1 / 3" aria-hidden="true">Form</span><span class="ph p-define" style="grid-column:3 / 6" aria-hidden="true">Define</span><span class="ph p-deliver" style="grid-column:6 / 9" aria-hidden="true">Deliver</span><button type="button" role="tab" class="p-form" id="tab-w1" aria-controls="wk1" aria-selected="true" data-w="1" style="grid-column:1" aria-label="Week 1"><small>Wk</small>1</button><button type="button" role="tab" class="p-form" id="tab-w2" aria-controls="wk2" aria-selected="false" data-w="2" style="grid-column:2" aria-label="Week 2"><small>Wk</small>2</button><button type="button" role="tab" class="p-define" id="tab-w3" aria-controls="wk3" aria-selected="false" data-w="3" style="grid-column:3" aria-label="Week 3"><small>Wk</small>3</button><button type="button" role="tab" class="p-define" id="tab-w4" aria-controls="wk4" aria-selected="false" data-w="4" style="grid-column:4" aria-label="Week 4"><small>Wk</small>4</button><button type="button" role="tab" class="p-define" id="tab-w5" aria-controls="wk5" aria-selected="false" data-w="5" style="grid-column:5" aria-label="Week 5"><small>Wk</small>5</button><button type="button" role="tab" class="p-deliver" id="tab-w6" aria-controls="wk6" aria-selected="false" data-w="6" style="grid-column:6" aria-label="Week 6"><small>Wk</small>6</button><button type="button" role="tab" class="p-deliver" id="tab-w7" aria-controls="wk7" aria-selected="false" data-w="7" style="grid-column:7" aria-label="Week 7"><small>Wk</small>7</button><button type="button" role="tab" class="p-deliver" id="tab-w8" aria-controls="wk8" aria-selected="false" data-w="8" style="grid-column:8" aria-label="Week 8"><small>Wk</small>8</button></div>
+ <div class="log-tools"><span>Phases: Form, Define, Deliver. Arrow keys move between weeks.</span><button type="button" id="showall" class="btn ghost" aria-pressed="false">Show all 8 weeks</button></div>
+ <article class="week" id="wk1" role="tabpanel" aria-labelledby="tab-w1" data-w="1">
+<div class="kick"><b>Week 1</b><span>Meeting 17 July 2026</span><span>Form phase</span></div>
+<h3>Skills audit, UI/UX role and reference research</h3>
+<div class="week-grid">
+ <div><h4>What I did</h4><ul class="did"><li>Completed my skills audit and confirmed the UI/UX and Design role. The Group Roles Report records that my audit showed the strongest design background in the team.</li><li>Reviewed reference material on 360° training tools and warehouse safety training to inform the initial look and feel of the project.</li><li>Present at the first team meeting, where Team Speed formed and agreed its roles and rules.</li></ul><h4>Supporting evidence</h4><div class="tags"><a class="tag c-team" href="#ev-E2">E2</a><a class="tag c-team" href="#ev-E3">E3</a><a class="tag c-team" href="#ev-E4">E4</a><a class="tag c-team" href="#ev-E5">E5 · W1</a></div></div>
+ <div><h4>Next step recorded in the minutes</h4><p class="nxt">Start early sketches and a mood board for the training environment and the HUD.</p>
+  <h4>My reflection</h4><div class="pend"><b>To be added</b>My own reflection for Week 1 goes here, taken from my individual submission.</div></div>
+</div>
+<div class="wk-nav"><button type="button" class="btn ghost prev" disabled>&larr; Previous week</button><button type="button" class="btn ghost next">Next week &rarr;</button></div>
+</article><article class="week" id="wk2" role="tabpanel" aria-labelledby="tab-w2" data-w="2">
+<div class="kick"><b>Week 2</b><span>Meeting 24 July 2026</span><span>Form phase</span></div>
+<h3>PACT analysis for the warehouse training use case</h3>
+<div class="week-grid">
+ <div><h4>What I did</h4><ul class="did"><li>Drafted the PACT analysis (People, Activities, Context, Technology) for the project, based on the warehouse training use case.</li><li>The later design document (B1) traces each of three PACT user groups to a specific interface decision (E10).</li></ul><h4>Supporting evidence</h4><div class="tags"><a class="tag c-plan" href="#ev-E7">E7</a><a class="tag c-team" href="#ev-E5">E5 · W2</a><a class="tag c-plan" href="#ev-E10">E10</a></div></div>
+ <div><h4>Next step recorded in the minutes</h4><p class="nxt">Begin early wireframe sketches for the login screen and the in-game HUD.</p>
+  <h4>My reflection</h4><div class="pend"><b>To be added</b>My own reflection for Week 2 goes here, taken from my individual submission.</div></div>
+</div>
+<div class="wk-nav"><button type="button" class="btn ghost prev">&larr; Previous week</button><button type="button" class="btn ghost next">Next week &rarr;</button></div>
+</article><article class="week" id="wk3" role="tabpanel" aria-labelledby="tab-w3" data-w="3">
+<div class="kick"><b>Week 3</b><span>Meeting 31 July 2026</span><span>Define phase</span></div>
+<h3>First wireframes: landing and login screen, in-game HUD</h3>
+<div class="week-grid">
+ <div><h4>What I did</h4><ul class="did"><li>Produced the first wireframes for the landing and login screen and for the in-game HUD, covering the timer, score, radar and step tracker.</li><li>The wireframe files themselves are not part of the submitted folders. The HUD mock-up graphics in the presentation deck (slides 4 and 8) show the same four elements.</li></ul><h4>Supporting evidence</h4><div class="tags"><a class="tag c-team" href="#ev-E5">E5 · W3</a><a class="tag c-client" href="#ev-E17">E17</a></div><div class="shots"><figure class="shot"><button type="button" data-lb="assets/sl-8-lb.jpg" data-full="evidence/E17_Lift_Right_Presentation.pdf" data-cap="E17 · slide 8: the HUD mock-up with timer, score, radar and step tracker" aria-label="Open E17 · slide 8: the HUD mock-up with timer, score, radar and step tracker"><img src="assets/sl-8.jpg" alt="" width="900" height="600" loading="lazy"></button><figcaption>E17 · slide 8: the HUD mock-up with timer, score, radar and step tracker</figcaption></figure></div></div>
+ <div><h4>Next step recorded in the minutes</h4><p class="nxt">Start the System Architecture and Use Case diagrams for A1.</p>
+  <h4>My reflection</h4><div class="pend"><b>To be added</b>My own reflection for Week 3 goes here, taken from my individual submission.</div></div>
+</div>
+<div class="wk-nav"><button type="button" class="btn ghost prev">&larr; Previous week</button><button type="button" class="btn ghost next">Next week &rarr;</button></div>
+</article><article class="week" id="wk4" role="tabpanel" aria-labelledby="tab-w4" data-w="4">
+<div class="kick"><b>Week 4</b><span>Meeting 7 August 2026</span><span>Define phase</span></div>
+<h3>Use Case diagram, Flowchart/DFD and System Requirement Analysis</h3>
+<div class="week-grid">
+ <div><h4>What I did</h4><ul class="did"><li>Completed the Use Case diagram and the Flowchart/DFD for A1.</li><li>Wrote the accompanying System Requirement Analysis explanations.</li><li>The project plan marks milestone M_C, “A1 design docs complete”, for this week.</li></ul><h4>Supporting evidence</h4><div class="tags"><a class="tag c-plan" href="#ev-E8">E8</a><a class="tag c-plan" href="#ev-E9">E9</a><a class="tag c-team" href="#ev-E6">E6</a><a class="tag c-team" href="#ev-E5">E5 · W4</a></div><div class="shots"><figure class="shot"><button type="button" data-lb="assets/dg-usecase-lb.jpg" data-full="evidence/E8_Use_Case_Diagram.png" data-cap="E8 · Use Case diagram" aria-label="Open E8 · Use Case diagram"><img src="assets/dg-usecase.jpg" alt="" width="900" height="600" loading="lazy"></button><figcaption>E8 · Use Case diagram</figcaption></figure><figure class="shot"><button type="button" data-lb="assets/dg-flow-lb.jpg" data-full="evidence/E8_Flowchart_DFD.png" data-cap="E8 · Flowchart / DFD" aria-label="Open E8 · Flowchart / DFD"><img src="assets/dg-flow.jpg" alt="" width="900" height="600" loading="lazy"></button><figcaption>E8 · Flowchart / DFD</figcaption></figure></div></div>
+ <div><h4>Next step recorded in the minutes</h4><p class="nxt">Start the zero-budget marketing strategy and the initial branding direction for A6.</p>
+  <h4>My reflection</h4><div class="pend"><b>To be added</b>My own reflection for Week 4 goes here, taken from my individual submission.</div></div>
+</div>
+<div class="wk-nav"><button type="button" class="btn ghost prev">&larr; Previous week</button><button type="button" class="btn ghost next">Next week &rarr;</button></div>
+</article><article class="week" id="wk5" role="tabpanel" aria-labelledby="tab-w5" data-w="5">
+<div class="kick"><b>Week 5</b><span>Meeting 14 August 2026</span><span>Define phase</span></div>
+<h3>Zero-budget marketing strategy and branding direction</h3>
+<div class="week-grid">
+ <div><h4>What I did</h4><ul class="did"><li>Completed the draft of the zero-budget marketing strategy: LinkedIn, direct outreach, social demo content and word-of-mouth.</li><li>Started the branding direction: colour palette, tagline and logo concept. The draft palette was deep navy with warm amber, chosen to echo warehouse hazard colours.</li><li>Attended the requirement review with the client on 10 August, with Shilu Chuke (Meeting 2).</li></ul><h4>Supporting evidence</h4><div class="tags"><a class="tag c-delivery" href="#ev-E11">E11</a><a class="tag c-client" href="#ev-E19">E19 · Meeting 2</a><a class="tag c-team" href="#ev-E5">E5 · W5</a></div></div>
+ <div><h4>Next step recorded in the minutes</h4><p class="nxt">Build the first website mockup pages (home, about) in Figma.</p>
+  <h4>My reflection</h4><div class="pend"><b>To be added</b>My own reflection for Week 5 goes here, taken from my individual submission.</div></div>
+</div>
+<div class="wk-nav"><button type="button" class="btn ghost prev">&larr; Previous week</button><button type="button" class="btn ghost next">Next week &rarr;</button></div>
+</article><article class="week" id="wk6" role="tabpanel" aria-labelledby="tab-w6" data-w="6">
+<div class="kick"><b>Week 6</b><span>Meeting 21 August 2026</span><span>Deliver phase</span></div>
+<h3>Website mockups, final logo and colour palette</h3>
+<div class="week-grid">
+ <div><h4>What I did</h4><ul class="did"><li>Completed the website mockups for the home, about, demo and contact pages, and finalised the logo and colour palette.</li><li>Each page carries the same navigation bar, footer and “Try Lift Right” button, so a visitor is always one click from the working prototype.</li><li>Tools: the minutes name Figma. The submitted Website Mockups document describes the pages as HTML/CSS mockups, and includes page renders of all four.</li></ul><h4>Supporting evidence</h4><div class="tags"><a class="tag c-delivery" href="#ev-E12">E12</a><a class="tag c-delivery" href="#ev-E13">E13</a><a class="tag c-delivery" href="#ev-E15">E15</a><a class="tag c-team" href="#ev-E5">E5 · W6</a></div><div class="shots"><figure class="shot"><button type="button" data-lb="assets/mock-home-lb.jpg" data-full="evidence/E12_Mockup_1.png" data-cap="E12 · Home page mockup" aria-label="Open E12 · Home page mockup"><img src="assets/mock-home.jpg" alt="" width="900" height="600" loading="lazy"></button><figcaption>E12 · Home page mockup</figcaption></figure><figure class="shot"><button type="button" data-lb="assets/mock-about-lb.jpg" data-full="evidence/E12_Mockup_2.png" data-cap="E12 · About page mockup" aria-label="Open E12 · About page mockup"><img src="assets/mock-about.jpg" alt="" width="900" height="600" loading="lazy"></button><figcaption>E12 · About page mockup</figcaption></figure></div></div>
+ <div><h4>Next step recorded in the minutes</h4><p class="nxt">Begin building the presentation slide deck content using the finished branding.</p>
+  <h4>My reflection</h4><div class="pend"><b>To be added</b>My own reflection for Week 6 goes here, taken from my individual submission.</div></div>
+</div>
+<div class="wk-nav"><button type="button" class="btn ghost prev">&larr; Previous week</button><button type="button" class="btn ghost next">Next week &rarr;</button></div>
+</article><article class="week" id="wk7" role="tabpanel" aria-labelledby="tab-w7" data-w="7">
+<div class="kick"><b>Week 7</b><span>Meeting 28 August 2026</span><span>Deliver phase</span></div>
+<h3>The full presentation slide deck</h3>
+<div class="week-grid">
+ <div><h4>What I did</h4><ul class="did"><li>Built the full presentation slide deck covering problem, solution, objectives, features, architecture, team and roadmap, using the finished branding.</li><li>The submitted deck has 20 slides and a 20-minute running order. The project plan records that the deck was built to the running order, not the other way round.</li></ul><h4>Supporting evidence</h4><div class="tags"><a class="tag c-client" href="#ev-E17">E17</a><a class="tag c-client" href="#ev-E18">E18</a><a class="tag c-team" href="#ev-E5">E5 · W7</a></div><div class="shots"><figure class="shot"><button type="button" data-lb="assets/sl-1-lb.jpg" data-full="evidence/E17_Lift_Right_Presentation.pdf" data-cap="E17 · slide 1: title" aria-label="Open E17 · slide 1: title"><img src="assets/sl-1.jpg" alt="" width="900" height="600" loading="lazy"></button><figcaption>E17 · slide 1: title</figcaption></figure><figure class="shot"><button type="button" data-lb="assets/sl-4-lb.jpg" data-full="evidence/E17_Lift_Right_Presentation.pdf" data-cap="E17 · slide 4: the solution, with the HUD mock-up" aria-label="Open E17 · slide 4: the solution, with the HUD mock-up"><img src="assets/sl-4.jpg" alt="" width="900" height="600" loading="lazy"></button><figcaption>E17 · slide 4: the solution, with the HUD mock-up</figcaption></figure></div></div>
+ <div><h4>Next step recorded in the minutes</h4><p class="nxt">Polish the slide visuals and prepare the mock HUD graphics used in the deck.</p>
+  <h4>My reflection</h4><div class="pend"><b>To be added</b>My own reflection for Week 7 goes here, taken from my individual submission.</div></div>
+</div>
+<div class="wk-nav"><button type="button" class="btn ghost prev">&larr; Previous week</button><button type="button" class="btn ghost next">Next week &rarr;</button></div>
+</article><article class="week" id="wk8" role="tabpanel" aria-labelledby="tab-w8" data-w="8">
+<div class="kick"><b>Week 8</b><span>Meeting 4 September 2026</span><span>Deliver phase</span></div>
+<h3>Final slide visuals and the prototype demonstration</h3>
+<div class="week-grid">
+ <div><h4>What I did</h4><ul class="did"><li>Finalised all slide visuals after rehearsal feedback.</li><li>Exported the final mockup files into the A6 folder.</li><li>Attended the prototype demonstration to the client on 3 September with the full team (Meeting 3).</li><li>Present at all eight weekly meetings, Weeks 1 to 8.</li></ul><h4>Supporting evidence</h4><div class="tags"><a class="tag c-client" href="#ev-E17">E17</a><a class="tag c-delivery" href="#ev-E12">E12</a><a class="tag c-client" href="#ev-E19">E19 · Meeting 3</a><a class="tag c-team" href="#ev-E5">E5 · W8</a></div><div class="shots"><figure class="shot"><button type="button" data-lb="assets/sl-15-lb.jpg" data-full="evidence/E17_Lift_Right_Presentation.pdf" data-cap="E17 · slide 15: Meet the Team" aria-label="Open E17 · slide 15: Meet the Team"><img src="assets/sl-15.jpg" alt="" width="900" height="600" loading="lazy"></button><figcaption>E17 · slide 15: Meet the Team</figcaption></figure></div></div>
+ <div><h4>Next step recorded in the minutes</h4><p class="nxt">Support the final formatting and proofreading pass across all documents.</p>
+  <h4>My reflection</h4><div class="pend"><b>To be added</b>My own reflection for Week 8 goes here, taken from my individual submission.</div></div>
+</div>
+<div class="wk-nav"><button type="button" class="btn ghost prev">&larr; Previous week</button><button type="button" class="btn ghost next" disabled>Next week &rarr;</button></div>
+</article>
+</div></section>
+
+<section class="block alt" id="presenting"><div class="wrap">
+ <div class="head"><h2>Documentation and Closing Lead</h2>
+ <p class="lead">For the 20-minute client presentation I took the team, challenges and roadmap section, the closing thanks and the clock.</p></div>
+ <div class="cols">
+  <div>
+   <h4>My part of the running order <a class="tag c-client" href="#ev-E18">E18</a></h4>
+   <ul class="run">
+    <li><b>15:00 to 17:00</b><span>Team roles, challenges and roadmap (slides 15, 18 and 19).</span></li>
+    <li><b>19:00 to 20:00</b><span>Closing and thank you (slide 20).</span></li>
+    <li><b>Clock</b><span>Timekeeper throughout, signalling at 6:30, 15:00 and 17:00 if the session runs over.</span></li>
+    <li><b>Questions</b><span>I answer questions about documentation and planning. Shilu answers project and client questions, and the developers answer technical and demo questions.</span></li>
+   </ul>
+   <p class="stat-note">Times are minutes into the session. The plan is the record of my role, and the client’s feedback form rates the session as a whole.</p>
+  </div>
+  <div><div class="gal"><figure><button type="button" data-lb="assets/sl-15-lb.jpg" data-full="evidence/E17_Lift_Right_Presentation.pdf" data-cap="Slide 15: Meet the Team" aria-label="Open Slide 15: Meet the Team"><img src="assets/sl-15.jpg" alt="" width="900" height="600" loading="lazy"></button><figcaption>Slide 15: Meet the Team</figcaption></figure><figure><button type="button" data-lb="assets/sl-18-lb.jpg" data-full="evidence/E17_Lift_Right_Presentation.pdf" data-cap="Slide 18: Challenges We Solved" aria-label="Open Slide 18: Challenges We Solved"><img src="assets/sl-18.jpg" alt="" width="900" height="600" loading="lazy"></button><figcaption>Slide 18: Challenges We Solved</figcaption></figure><figure><button type="button" data-lb="assets/sl-20-lb.jpg" data-full="evidence/E17_Lift_Right_Presentation.pdf" data-cap="Slide 20: Thank you" aria-label="Open Slide 20: Thank you"><img src="assets/sl-20.jpg" alt="" width="900" height="600" loading="lazy"></button><figcaption>Slide 20: Thank you</figcaption></figure></div></div>
+ </div>
+ <div class="sub"><h4>After the first assessment <a class="tag c-delivery" href="#ev-E14">E14</a></h4>
+  <div class="two">
+   <div class="box done"><h4>Recorded as done</h4><ul><li>Company website (four pages, logo, mission, team, services), owned by Sparas and me, published at the address in E15</li><li>Prototype demonstration and presentation to the client</li></ul></div>
+   <div class="box open"><h4>Ready, not yet carried out</h4><ul><li>LinkedIn post graphics, co-owned with Shilu, marked “Ready to post”</li><li>The mockups’ placeholder photos, quotes and contact details, which each member was meant to fill in</li></ul></div>
+  </div></div>
+</div></section>
+
+<section class="block" id="evidence"><div class="wrap">
+ <div class="head"><h2>Twenty-one labelled items</h2>
+ <p class="lead">Every claim in this portfolio points to an evidence label. Word documents open as PDFs in the browser, with the original .docx alongside. Team documents and my own work sit side by side, and each card says which is which.</p></div>
+ <div class="filters" role="group" aria-label="Filter evidence by type"><button class="chip" type="button" data-f="all" aria-pressed="true">All<span>21</span></button><button class="chip" type="button" data-f="team" aria-pressed="false">Team and governance<span>6</span></button><button class="chip" type="button" data-f="plan" aria-pressed="false">Research and design documents<span>4</span></button><button class="chip" type="button" data-f="delivery" aria-pressed="false">Brand, website and marketing<span>6</span></button><button class="chip" type="button" data-f="client" aria-pressed="false">Client and presentation<span>5</span></button></div>
+ <div class="ev-grid"><article class="ev" id="ev-E1" data-cat="team"><div class="ev-top"><span class="tag c-team">E1</span><span class="ev-cat">Team and governance</span></div><h3>Group Registration Form</h3><p>Team 6, Team Speed: members, roles, client, project title and signatures.</p><div class="used">Used in W1</div><div class="ev-files"><div class="frow"><span class="lbl">Document</span><span class="acts"><a class="mini pri" href="evidence/pdf/E1_Group_Registration.pdf" target="_blank" rel="noopener">View PDF</a><a class="mini dl" href="evidence/E1_Group_Registration.docx">.docx</a></span></div></div></article><article class="ev" id="ev-E2" data-cat="team"><div class="ev-top"><span class="tag c-team">E2</span><span class="ev-cat">Team and governance</span></div><h3>Individual Skills Audit Report</h3><p>Self-ratings from 1 to 5 across eight skill areas for all four members. My section is headed “Skills Audit — Swikriti Bashyal”.</p><div class="used">Used in W1</div><div class="ev-files"><div class="frow"><span class="lbl">Document</span><span class="acts"><a class="mini pri" href="evidence/pdf/E2_Skills_Audit_Report.pdf" target="_blank" rel="noopener">View PDF</a><a class="mini dl" href="evidence/E2_Skills_Audit_Report.docx">.docx</a></span></div></div></article><article class="ev" id="ev-E3" data-cat="team"><div class="ev-top"><span class="tag c-team">E3</span><span class="ev-cat">Team and governance</span></div><h3>Group Roles Report</h3><p>How the skills audits decided each role. It records that my audit showed the strongest design background in the team.</p><div class="used">Used in W1</div><div class="ev-files"><div class="frow"><span class="lbl">Document</span><span class="acts"><a class="mini pri" href="evidence/pdf/E3_Group_Roles_Report.pdf" target="_blank" rel="noopener">View PDF</a><a class="mini dl" href="evidence/E3_Group_Roles_Report.docx">.docx</a></span></div></div></article><article class="ev" id="ev-E4" data-cat="team"><div class="ev-top"><span class="tag c-team">E4</span><span class="ev-cat">Team and governance</span></div><h3>Group Rules and Governance</h3><p>Attendance, communication, deadlines, conflict resolution, task ownership and quality assurance rules.</p><div class="used">Used in W1</div><div class="ev-files"><div class="frow"><span class="lbl">Document</span><span class="acts"><a class="mini pri" href="evidence/pdf/E4_Group_Rules_Governance.pdf" target="_blank" rel="noopener">View PDF</a><a class="mini dl" href="evidence/E4_Group_Rules_Governance.docx">.docx</a></span></div></div></article><article class="ev" id="ev-E5" data-cat="team"><div class="ev-top"><span class="tag c-team">E5</span><span class="ev-cat">Team and governance</span></div><h3>Weekly Meeting Minutes</h3><p>Attendance, each member’s update, issues and next steps for Weeks 1 to 8. My row is in every week.</p><div class="used">Used in W1 to W8</div><div class="ev-files"><div class="frow"><span class="lbl">Week 1</span><span class="acts"><a class="mini pri" href="evidence/pdf/E5_Meeting_Minutes_Week1.pdf" target="_blank" rel="noopener">View PDF</a><a class="mini dl" href="evidence/E5_Meeting_Minutes_Week1.docx">.docx</a></span></div><div class="frow"><span class="lbl">Week 2</span><span class="acts"><a class="mini pri" href="evidence/pdf/E5_Meeting_Minutes_Week2.pdf" target="_blank" rel="noopener">View PDF</a><a class="mini dl" href="evidence/E5_Meeting_Minutes_Week2.docx">.docx</a></span></div><div class="frow"><span class="lbl">Week 3</span><span class="acts"><a class="mini pri" href="evidence/pdf/E5_Meeting_Minutes_Week3.pdf" target="_blank" rel="noopener">View PDF</a><a class="mini dl" href="evidence/E5_Meeting_Minutes_Week3.docx">.docx</a></span></div><div class="frow"><span class="lbl">Week 4</span><span class="acts"><a class="mini pri" href="evidence/pdf/E5_Meeting_Minutes_Week4.pdf" target="_blank" rel="noopener">View PDF</a><a class="mini dl" href="evidence/E5_Meeting_Minutes_Week4.docx">.docx</a></span></div><div class="frow"><span class="lbl">Week 5</span><span class="acts"><a class="mini pri" href="evidence/pdf/E5_Meeting_Minutes_Week5.pdf" target="_blank" rel="noopener">View PDF</a><a class="mini dl" href="evidence/E5_Meeting_Minutes_Week5.docx">.docx</a></span></div><div class="frow"><span class="lbl">Week 6</span><span class="acts"><a class="mini pri" href="evidence/pdf/E5_Meeting_Minutes_Week6.pdf" target="_blank" rel="noopener">View PDF</a><a class="mini dl" href="evidence/E5_Meeting_Minutes_Week6.docx">.docx</a></span></div><div class="frow"><span class="lbl">Week 7</span><span class="acts"><a class="mini pri" href="evidence/pdf/E5_Meeting_Minutes_Week7.pdf" target="_blank" rel="noopener">View PDF</a><a class="mini dl" href="evidence/E5_Meeting_Minutes_Week7.docx">.docx</a></span></div><div class="frow"><span class="lbl">Week 8</span><span class="acts"><a class="mini pri" href="evidence/pdf/E5_Meeting_Minutes_Week8.pdf" target="_blank" rel="noopener">View PDF</a><a class="mini dl" href="evidence/E5_Meeting_Minutes_Week8.docx">.docx</a></span></div></div></article><article class="ev" id="ev-E6" data-cat="team"><div class="ev-top"><span class="tag c-team">E6</span><span class="ev-cat">Team and governance</span></div><h3>Initial Project Plan and Gantt Chart</h3><p>26 tasks, 7 milestones, dependencies and workload balance. I own 7 tasks.</p><div class="used">Used in W4</div><div class="ev-files"><div class="frow"><span class="lbl">Initial Project Plan</span><span class="acts"><a class="mini pri" href="evidence/pdf/E6_Initial_Project_Plan.pdf" target="_blank" rel="noopener">View PDF</a><a class="mini dl" href="evidence/E6_Initial_Project_Plan.docx">.docx</a></span></div><div class="frow dlrow"><span class="lbl">Gantt chart workbook</span><span class="acts"><a class="mini pri dl" href="evidence/E6_Initial_Project_Plan_Gantt.xlsx">Download</a></span></div></div></article><article class="ev" id="ev-E7" data-cat="plan"><div class="ev-top"><span class="tag c-plan">E7</span><span class="ev-cat">Research and design documents</span></div><h3>Introduction and PACT Analysis</h3><p>The project purpose and target users, and the People, Activities, Context and Technology analysis that I drafted.</p><div class="used">Used in W2</div><div class="ev-files"><div class="frow"><span class="lbl">Introduction</span><span class="acts"><a class="mini pri" href="evidence/pdf/E7_Introduction.pdf" target="_blank" rel="noopener">View PDF</a><a class="mini dl" href="evidence/E7_Introduction.docx">.docx</a></span></div><div class="frow"><span class="lbl">PACT Analysis</span><span class="acts"><a class="mini pri" href="evidence/pdf/E7_PACT_Analysis.pdf" target="_blank" rel="noopener">View PDF</a><a class="mini dl" href="evidence/E7_PACT_Analysis.docx">.docx</a></span></div></div></article><article class="ev" id="ev-E8" data-cat="plan"><div class="ev-top"><span class="tag c-plan">E8</span><span class="ev-cat">Research and design documents</span></div><h3>A1 Diagrams</h3><p>Use Case diagram and Flowchart/DFD (my work, Week 4), alongside the System Architecture and DFD Level 1 diagrams from the same folder.</p><div class="used">Used in W4</div><div class="ev-files"><div class="gal"><figure><button type="button" data-lb="assets/dg-usecase-lb.jpg" data-full="evidence/E8_Use_Case_Diagram.png" data-cap="Use Case diagram" aria-label="Open Use Case diagram"><img src="assets/dg-usecase.jpg" alt="" width="900" height="600" loading="lazy"></button><figcaption>Use Case diagram</figcaption></figure><figure><button type="button" data-lb="assets/dg-flow-lb.jpg" data-full="evidence/E8_Flowchart_DFD.png" data-cap="Flowchart / DFD" aria-label="Open Flowchart / DFD"><img src="assets/dg-flow.jpg" alt="" width="900" height="600" loading="lazy"></button><figcaption>Flowchart / DFD</figcaption></figure><figure><button type="button" data-lb="assets/dg-arch-lb.jpg" data-full="evidence/E8_System_Architecture.png" data-cap="System Architecture (same folder)" aria-label="Open System Architecture (same folder)"><img src="assets/dg-arch.jpg" alt="" width="900" height="600" loading="lazy"></button><figcaption>System Architecture (same folder)</figcaption></figure><figure><button type="button" data-lb="assets/dg-dfd1-lb.jpg" data-full="evidence/E8_DFD_Level1.png" data-cap="DFD Level 1 (same folder)" aria-label="Open DFD Level 1 (same folder)"><img src="assets/dg-dfd1.jpg" alt="" width="900" height="600" loading="lazy"></button><figcaption>DFD Level 1 (same folder)</figcaption></figure></div></div></article><article class="ev" id="ev-E9" data-cat="plan"><div class="ev-top"><span class="tag c-plan">E9</span><span class="ev-cat">Research and design documents</span></div><h3>System Requirement Analysis</h3><p>The explanations that accompany the A1 diagrams. I wrote these in Week 4.</p><div class="used">Used in W4</div><div class="ev-files"><div class="frow"><span class="lbl">Document</span><span class="acts"><a class="mini pri" href="evidence/pdf/E9_System_Requirement_Analysis.pdf" target="_blank" rel="noopener">View PDF</a><a class="mini dl" href="evidence/E9_System_Requirement_Analysis.docx">.docx</a></span></div></div></article><article class="ev" id="ev-E10" data-cat="plan"><div class="ev-top"><span class="tag c-plan">E10</span><span class="ev-cat">Research and design documents</span></div><h3>Design, Testing and User Documentation (B1)</h3><p>Team document. Section 2 traces each PACT user group to a design decision, and section 5 records what happened to the client’s feedback.</p><div class="used">Used in W2, W6</div><div class="ev-files"><div class="frow"><span class="lbl">Document</span><span class="acts"><a class="mini pri" href="evidence/pdf/E10_B1_Design_Testing_and_User_Documentation.pdf" target="_blank" rel="noopener">View PDF</a><a class="mini dl" href="evidence/E10_B1_Design_Testing_and_User_Documentation.docx">.docx</a></span></div></div></article><article class="ev" id="ev-E11" data-cat="delivery"><div class="ev-top"><span class="tag c-delivery">E11</span><span class="ev-cat">Brand, website and marketing</span></div><h3>Zero-Budget Marketing Strategy</h3><p>Channels, messages and the branding section: company and product name, tagline, palette, logo concept and mission statement.</p><div class="used">Used in W5</div><div class="ev-files"><div class="frow"><span class="lbl">Document</span><span class="acts"><a class="mini pri" href="evidence/pdf/E11_Marketing_Strategy.pdf" target="_blank" rel="noopener">View PDF</a><a class="mini dl" href="evidence/E11_Marketing_Strategy.docx">.docx</a></span></div></div></article><article class="ev" id="ev-E12" data-cat="delivery"><div class="ev-top"><span class="tag c-delivery">E12</span><span class="ev-cat">Brand, website and marketing</span></div><h3>Website Mockups</h3><p>Home, about, demo and contact page mockups with the design reasoning for each page, plus the four page renders.</p><div class="used">Used in W6, W8</div><div class="ev-files"><div class="frow"><span class="lbl">Website Mockups document</span><span class="acts"><a class="mini pri" href="evidence/pdf/E12_Website_Mockups.pdf" target="_blank" rel="noopener">View PDF</a><a class="mini dl" href="evidence/E12_Website_Mockups.docx">.docx</a></span></div><div class="gal"><figure><button type="button" data-lb="assets/mock-home-lb.jpg" data-full="evidence/E12_Mockup_1.png" data-cap="Home" aria-label="Open Home"><img src="assets/mock-home.jpg" alt="" width="900" height="600" loading="lazy"></button><figcaption>Home</figcaption></figure><figure><button type="button" data-lb="assets/mock-about-lb.jpg" data-full="evidence/E12_Mockup_2.png" data-cap="About" aria-label="Open About"><img src="assets/mock-about.jpg" alt="" width="900" height="600" loading="lazy"></button><figcaption>About</figcaption></figure><figure><button type="button" data-lb="assets/mock-demo-lb.jpg" data-full="evidence/E12_Mockup_3.png" data-cap="Demo" aria-label="Open Demo"><img src="assets/mock-demo.jpg" alt="" width="900" height="600" loading="lazy"></button><figcaption>Demo</figcaption></figure><figure><button type="button" data-lb="assets/mock-contact-lb.jpg" data-full="evidence/E12_Mockup_4.png" data-cap="Contact" aria-label="Open Contact"><img src="assets/mock-contact.jpg" alt="" width="900" height="600" loading="lazy"></button><figcaption>Contact</figcaption></figure></div></div></article><article class="ev" id="ev-E13" data-cat="delivery"><div class="ev-top"><span class="tag c-delivery">E13</span><span class="ev-cat">Brand, website and marketing</span></div><h3>Website Design Documentation (B2)</h3><p>The finished logo, style guide (colours, typography, buttons, imagery) and page structure of the Team Speed Studios website.</p><div class="used">Used in W6</div><div class="ev-files"><div class="frow"><span class="lbl">Document</span><span class="acts"><a class="mini pri" href="evidence/pdf/E13_B2_Website_Design_Documentation.pdf" target="_blank" rel="noopener">View PDF</a><a class="mini dl" href="evidence/E13_B2_Website_Design_Documentation.docx">.docx</a></span></div></div></article><article class="ev" id="ev-E14" data-cat="delivery"><div class="ev-top"><span class="tag c-delivery">E14</span><span class="ev-cat">Brand, website and marketing</span></div><h3>Zero-Budget Marketing Plan, finalised (B2)</h3><p>Channels with owners and status. I am named as an owner of the company website and of the LinkedIn posts.</p><div class="used">Used in After W8</div><div class="ev-files"><div class="frow"><span class="lbl">Document</span><span class="acts"><a class="mini pri" href="evidence/pdf/E14_B2_Marketing_Plan_Finalised.pdf" target="_blank" rel="noopener">View PDF</a><a class="mini dl" href="evidence/E14_B2_Marketing_Plan_Finalised.docx">.docx</a></span></div></div></article><article class="ev" id="ev-E15" data-cat="delivery"><div class="ev-top"><span class="tag c-delivery">E15</span><span class="ev-cat">Brand, website and marketing</span></div><h3>Team Speed Studios logo and website</h3><p>The finished logo (PNG and SVG), the website files as submitted, and a link to the published site.</p><div class="used">Used in W6</div><div class="ev-files"><div class="logo-box"><img src="assets/logo.jpg" alt="Team Speed Studios logo" width="1320" height="288" loading="lazy"></div><div class="frow"><span class="lbl">Logo (PNG)</span><span class="acts"><a class="mini pri" href="evidence/E15_TeamSpeedStudios_Logo.png" target="_blank" rel="noopener">View</a></span></div><div class="frow dlrow"><span class="lbl">Logo (SVG)</span><span class="acts"><a class="mini pri dl" href="evidence/E15_TeamSpeedStudios_Logo.svg">Download</a></span></div><div class="frow dlrow"><span class="lbl">Website files as submitted (zip)</span><span class="acts"><a class="mini pri dl" href="evidence/E15_TeamSpeedStudios_Website_files.zip">Download</a></span></div><div class="frow"><span class="lbl">Published website</span><span class="acts"><a class="mini pri" href="https://shresthasparas.github.io/Team-Speed/TeamSpeedStudios_Website/" target="_blank" rel="noopener">Open site &#8599;</a></span></div></div></article><article class="ev" id="ev-E16" data-cat="delivery"><div class="ev-top"><span class="tag c-delivery">E16</span><span class="ev-cat">Brand, website and marketing</span></div><h3>Team Poster (B7)</h3><p>The team poster. It is credited to Team Speed as a whole, with no individual credit recorded.</p><div class="used">Used in After W8</div><div class="ev-files"><div class="frow"><span class="lbl">Team poster</span><span class="acts"><a class="mini pri" href="evidence/E16_B7_Team_Poster.pdf" target="_blank" rel="noopener">View PDF</a></span></div><div class="gal"><figure><button type="button" data-lb="assets/poster-lb.jpg" data-full="evidence/E16_B7_Team_Poster.png" data-cap="B7 team poster" aria-label="Open B7 team poster"><img src="assets/poster.jpg" alt="" width="900" height="600" loading="lazy"></button><figcaption>B7 team poster</figcaption></figure></div></div></article><article class="ev" id="ev-E17" data-cat="client"><div class="ev-top"><span class="tag c-client">E17</span><span class="ev-cat">Client and presentation</span></div><h3>Presentation Slide Deck</h3><p>The 20-slide deck I built in Week 7 and finalised in Week 8, as a PDF and the original PowerPoint file.</p><div class="used">Used in W3, W7, W8</div><div class="ev-files"><div class="frow"><span class="lbl">Slide deck, 20 slides</span><span class="acts"><a class="mini pri" href="evidence/E17_Lift_Right_Presentation.pdf" target="_blank" rel="noopener">View PDF</a></span></div><div class="frow dlrow"><span class="lbl">Original PowerPoint file</span><span class="acts"><a class="mini pri dl" href="evidence/E17_Lift_Right_Presentation.pptx">Download</a></span></div></div></article><article class="ev" id="ev-E18" data-cat="client"><div class="ev-top"><span class="tag c-client">E18</span><span class="ev-cat">Client and presentation</span></div><h3>Presentation Plan and Responsibility Chart</h3><p>The 20-minute session plan and who speaks when. I am the Documentation and Closing Lead.</p><div class="used">Used in W7, W9</div><div class="ev-files"><div class="frow"><span class="lbl">Document</span><span class="acts"><a class="mini pri" href="evidence/pdf/E18_B6_Presentation_Plan_and_Responsibility_Chart.pdf" target="_blank" rel="noopener">View PDF</a><a class="mini dl" href="evidence/E18_B6_Presentation_Plan_and_Responsibility_Chart.docx">.docx</a></span></div></div></article><article class="ev" id="ev-E19" data-cat="client"><div class="ev-top"><span class="tag c-client">E19</span><span class="ev-cat">Client and presentation</span></div><h3>Client Meeting Logs</h3><p>Introductory call (16 July), requirement review (10 August, which I attended) and prototype demonstration (3 September, full team).</p><div class="used">Used in W5, W8</div><div class="ev-files"><div class="frow"><span class="lbl">Meeting 1 · Introductory call</span><span class="acts"><a class="mini pri" href="evidence/pdf/E19_Meeting_1_Introductory_Call.pdf" target="_blank" rel="noopener">View PDF</a><a class="mini dl" href="evidence/E19_Meeting_1_Introductory_Call.docx">.docx</a></span></div><div class="frow"><span class="lbl">Meeting 2 · Requirement review</span><span class="acts"><a class="mini pri" href="evidence/pdf/E19_Meeting_2_Requirement_Review.pdf" target="_blank" rel="noopener">View PDF</a><a class="mini dl" href="evidence/E19_Meeting_2_Requirement_Review.docx">.docx</a></span></div><div class="frow"><span class="lbl">Meeting 3 · Prototype demonstration</span><span class="acts"><a class="mini pri" href="evidence/pdf/E19_Meeting_3_Prototype_Demonstration.pdf" target="_blank" rel="noopener">View PDF</a><a class="mini dl" href="evidence/E19_Meeting_3_Prototype_Demonstration.docx">.docx</a></span></div></div></article><article class="ev" id="ev-E20" data-cat="client"><div class="ev-top"><span class="tag c-client">E20</span><span class="ev-cat">Client and presentation</span></div><h3>Client Presentation Feedback Form</h3><p>The client’s signed ratings (24/25) and four written comments.</p><div class="used">Used in After W8</div><div class="ev-files"><div class="frow"><span class="lbl">Signed feedback form (2 pages)</span><span class="acts"><a class="mini pri" href="evidence/E20_Client_Feedback_Form.pdf" target="_blank" rel="noopener">View PDF</a></span></div></div></article><article class="ev" id="ev-E21" data-cat="client"><div class="ev-top"><span class="tag c-client">E21</span><span class="ev-cat">Client and presentation</span></div><h3>Team Photo at the Presentation</h3><p>Team Speed at the client presentation.</p><div class="used">Used in After W8</div><div class="ev-files"><button type="button" class="ev-hero" data-lb="assets/team-1200.jpg" data-full="evidence/E21_Presentation_Evidence.jpeg" data-cap="E21: Team Speed at the client presentation" aria-label="Open the team photo"><img src="assets/team-1200.jpg" alt="Team Speed standing beside the final Thank You slide at the client presentation" width="1200" height="900" loading="lazy"></button></div></article></div>
+</div></section>
+
+<section class="block alt" id="client"><div class="wrap">
+ <div class="head"><h2>What the client said about the design</h2>
+ <p class="lead">I attended the requirement review on 10 August and the prototype demonstration on 3 September. The client’s final feedback rated the presentation 24 out of 25, and four comments asked for improvements.</p></div>
+ <div class="cols">
+  <div>
+   <h4>Client meetings I attended <a class="tag c-client" href="#ev-E19">E19</a></h4>
+   <ol class="contacts">
+    <li><time>10 August</time><div><strong>Requirement review (Google Meet)</strong><span class="d">Shilu Chuke and I walked the client through the checkpoints, scoring and supervisor view.</span><div class="tags"><a class="tag c-client" href="#ev-E19">E19</a></div></div></li>
+    <li><time>3 September</time><div><strong>Prototype demonstration (in person)</strong><span class="d">The full team demonstrated navigation, the quiz sequence and live scoring.</span><div class="tags"><a class="tag c-client" href="#ev-E19">E19</a></div></div></li>
+    <li><time>Presentation day</time><div><strong>Client presentation</strong><span class="d">Rated 4, 5, 5, 5 and 5 out of 5.</span><div class="tags"><a class="tag c-client" href="#ev-E20">E20</a></div></div></li>
+   </ol>
+  </div>
+  <div>
+   <h4>Final presentation feedback <a class="tag c-client" href="#ev-E20">E20</a></h4>
+   <div class="score"><b>24/25</b><span>five criteria, rated 1 to 5</span></div>
+   <ul class="bars"><li><span>Team introduction and team interactions</span><span class="track"><span class="fill" style="width:80%"></span></span><span class="v">4/5</span></li><li><span>Slides, layout, flow and visual elements</span><span class="track"><span class="fill" style="width:100%"></span></span><span class="v">5/5</span></li><li><span>Content and full use of time allocation</span><span class="track"><span class="fill" style="width:100%"></span></span><span class="v">5/5</span></li><li><span>Understanding of the client’s needs and our own ideas</span><span class="track"><span class="fill" style="width:100%"></span></span><span class="v">5/5</span></li><li><span>Prototype demonstration and confidence in the team</span><span class="track"><span class="fill" style="width:100%"></span></span><span class="v">5/5</span></li></ul>
+  </div>
+ </div>
+ <div class="sub"><h4>The four improvement comments, and what the team recorded <a class="tag c-plan" href="#ev-E10">E10</a></h4>
+  <div class="tbl fb"><table><thead><tr><th scope="col">Client comment</th><th scope="col">What the team recorded</th><th scope="col">Status</th></tr></thead><tbody><tr><td>“Update the design layout for selecting options and keep the content properly centered for a cleaner and more balanced interface.”</td><td>Reviewed. Considered for the next iteration.</td><td>Planned</td></tr><tr><td>“Revise the point system to include more variation rather than only giving points for correct answers and deducting points for incorrect answers.”</td><td>Scoring analysed, a time bonus and points per step weighed. Not shipped in this prototype.</td><td>Explored, planned</td></tr><tr><td>“Consider introducing different ways to earn points, such as completing tasks, making quick decisions, or achieving specific goals.”</td><td>Covered by the same scoring analysis. Further work on varied scoring is recommended.</td><td>Explored, planned</td></tr><tr><td>“Make the overall experience more engaging and interactive so that learning feels natural and enjoyable rather than forced.”</td><td>Ideas playtested in short sessions. The prototype already has bonus rounds, hazard drills, a spine-stress meter and a radar.</td><td>Explored, planned</td></tr></tbody></table></div>
+  <p class="stat-note">The first comment is about interface layout, which is my area. The team’s record says it was reviewed and planned for a later iteration, and none of the four was built before submission.</p></div>
+</div></section>
+
+<section class="block" id="reflection"><div class="wrap">
+ <div class="head"><h2>What I learned</h2>
+ <p class="lead">This section is for my own reflection. Under each heading, the facts from the evidence are listed first. My own words follow, once I add them from my individual submission.</p></div>
+ <div class="rcards"><article class="rcard"><h3>Adapting to change</h3><h4>What the evidence shows</h4><ul><li>The plan settled the branding direction (palette, tagline, logo concept) in the marketing strategy before the mockups were built, so that nothing had to be redrawn (E6).</li><li>B1 records that playtest feedback within the team led to polished HUD visuals (radar, timer and step tracker) in Week 6 (E10). It does not say who made them.</li><li>The client’s comment on the selection layout arrived at the final presentation, with little time left to build it (E10, E20).</li></ul><div class="pend"><b>To be added</b>My own reflection on this topic goes here, taken from my individual submission.</div></article><article class="rcard"><h3>Existing skills I used</h3><h4>What the evidence shows</h4><ul><li>My skills audit rated UI/UX design and prototyping tools 5/5 and written communication 4/5 (E2).</li><li>The Group Roles Report gave me the UI/UX and Design Lead role because my audit showed the strongest design background in the team (E3).</li><li>I wrote the PACT Analysis, the marketing strategy draft and the website mockup documentation (E2, E5).</li></ul><div class="pend"><b>To be added</b>My own reflection on this topic goes here, taken from my individual submission.</div></article><article class="rcard"><h3>Approach to group work</h3><h4>What the evidence shows</h4><ul><li>I attended all eight weekly meetings (E5) and client meetings 2 and 3 (E19).</li><li>The plan ran my design and branding tasks in parallel with the developers’ build, because they sat off the critical path (E6).</li><li>The team’s rules cover attendance, communication, deadlines, conflict resolution, task ownership and quality assurance (E4).</li></ul><div class="pend"><b>To be added</b>My own reflection on this topic goes here, taken from my individual submission.</div></article><article class="rcard"><h3>New skills I developed</h3><h4>What the evidence shows</h4><ul><li>The weekly minutes show a sequence of new kinds of work: PACT analysis, diagrams, a marketing strategy, a brand, website mockups, a full slide deck (E5).</li><li>In the final presentation I am the timekeeper, signalling at 6:30, 15:00 and 17:00 (E18).</li></ul><div class="pend"><b>To be added</b>My own reflection on this topic goes here, taken from my individual submission.</div></article><article class="rcard"><h3>Evaluation of outcomes and my performance</h3><h4>What the evidence shows</h4><ul><li>The client rated slides, layout, flow and visual elements 5/5, and the presentation 24/25 overall (E20).</li><li>Four improvement comments came back, and none had been built by submission (E10, E20).</li><li>The LinkedIn post graphics I co-own are marked “Ready to post”, not yet posted (E14).</li><li>The About and Contact mockups use placeholders for photos, quotes and contact details. The mockup document states this openly (E12).</li></ul><div class="pend"><b>To be added</b>My own reflection on this topic goes here, taken from my individual submission.</div></article><article class="rcard"><h3>Employability</h3><h4>What the evidence shows</h4><ul><li>Artefacts I can show: wireframes described in the minutes, diagrams, a brand and style guide, four website mockups and a 20-slide deck (E8, E12, E13, E17).</li><li>The deliverables above sit alongside documentation, planning and presentation work (E6, E18).</li></ul><div class="pend"><b>To be added</b>My own reflection on this topic goes here, taken from my individual submission.</div></article></div>
+</div></section>
+
+</main>
+
+<footer><div class="wrap">
+ <div class="foot-grid">
+  <div><h4>About this portfolio</h4><p style="margin:0 0 10px;max-width:46ch">Individual ePortfolio for CET257 Enterprise Project. Every weekly entry and evidence item comes from Team Speed’s Assessment 1 and Assessment 2 submissions. Reflection sections stay empty until I add my own words.</p></div>
+  <div><h4>Contact</h4><p style="margin:0">Student email: <a href="mailto:bwit25.swb@ismt.edu.np">bwit25.swb@ismt.edu.np</a></p></div>
+ </div>
+ <p class="copy">Swikriti Bashyal · Team Speed (Team 6) · Last updated 12 October 2026</p>
+</div></footer>
+
+<dialog class="lb" id="lb" aria-label="Image viewer"><div class="lb-in"><img alt=""><div class="lb-bar"><span class="cap"></span><span style="display:flex;gap:8px"><a class="full" href="#" target="_blank" rel="noopener">Open original</a><button type="button" class="x">Close</button></span></div></div></dialog>
+
+<script>
+(function(){
+  var doc = document, root = doc.documentElement;
+  root.classList.add('js');
+
+  /* theme toggle (only present on the stand-alone site) */
+  var tb = doc.getElementById('theme-btn');
+  if (tb) {
+    var saved = null;
+    try { saved = localStorage.getItem('sc-theme'); } catch (e) {}
+    if (saved === 'light' || saved === 'dark') root.setAttribute('data-theme', saved);
+    tb.addEventListener('click', function(){
+      var cur = root.getAttribute('data-theme');
+      if (!cur) cur = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      var next = cur === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('sc-theme', next); } catch (e) {}
+    });
+  }
+
+  /* weekly log tabs */
+  var tabs = [].slice.call(doc.querySelectorAll('.gantt [role=tab]'));
+  var weeks = [].slice.call(doc.querySelectorAll('.week'));
+  var showAll = doc.getElementById('showall');
+  var allMode = false;
+  function select(n, focus){
+    tabs.forEach(function(t){
+      var on = +t.dataset.w === n;
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      t.tabIndex = on ? 0 : -1;
+      if (on && focus) t.focus();
+    });
+    weeks.forEach(function(w){ w.hidden = !allMode && +w.dataset.w !== n; });
+    var p = doc.querySelector('.week[data-w="'+n+'"] .prev'), x = doc.querySelector('.week[data-w="'+n+'"] .next');
+    if (p) p.disabled = n === 1;
+    if (x) x.disabled = n === weeks.length;
+    current = n;
+  }
+  var current = 1;
+  tabs.forEach(function(t){
+    t.addEventListener('click', function(){
+      var n = +t.dataset.w;
+      if (allMode) { var w = doc.getElementById('wk'+n); select(n); if (w) w.scrollIntoView({behavior:'smooth', block:'start'}); }
+      else select(n);
+    });
+    t.addEventListener('keydown', function(e){
+      var n = +t.dataset.w;
+      if (e.key === 'ArrowRight') { select(Math.min(weeks.length, n+1), true); e.preventDefault(); }
+      if (e.key === 'ArrowLeft') { select(Math.max(1, n-1), true); e.preventDefault(); }
+      if (e.key === 'Home') { select(1, true); e.preventDefault(); }
+      if (e.key === 'End') { select(weeks.length, true); e.preventDefault(); }
+    });
+  });
+  doc.addEventListener('click', function(e){
+    var b = e.target.closest && e.target.closest('.prev,.next');
+    if (!b) return;
+    var n = current + (b.classList.contains('next') ? 1 : -1);
+    if (n < 1 || n > weeks.length) return;
+    select(n);
+    var g = doc.getElementById('log-top'); if (g) g.scrollIntoView({behavior:'smooth', block:'start'});
+  });
+  if (showAll) showAll.addEventListener('click', function(){
+    allMode = !allMode;
+    showAll.setAttribute('aria-pressed', allMode ? 'true' : 'false');
+    showAll.textContent = allMode ? 'Show one week at a time' : 'Show all ' + weeks.length + ' weeks';
+    select(current);
+  });
+  if (weeks.length) select(1);
+
+  /* evidence filter */
+  var chips = [].slice.call(doc.querySelectorAll('.filters .chip'));
+  var cards = [].slice.call(doc.querySelectorAll('.ev'));
+  function setFilter(f){
+    chips.forEach(function(c){ c.setAttribute('aria-pressed', c.dataset.f === f ? 'true' : 'false'); });
+    cards.forEach(function(c){ c.hidden = !(f === 'all' || c.dataset.cat === f); });
+  }
+  chips.forEach(function(c){ c.addEventListener('click', function(){ setFilter(c.dataset.f); }); });
+  doc.addEventListener('click', function(e){
+    var a = e.target.closest && e.target.closest('a.tag[href^="#ev-"]');
+    if (a) setFilter('all');
+  });
+
+  /* lightbox */
+  var dlg = doc.getElementById('lb');
+  if (dlg && dlg.showModal) {
+    var img = dlg.querySelector('img'), cap = dlg.querySelector('.cap'), full = dlg.querySelector('a.full');
+    doc.addEventListener('click', function(e){
+      var t = e.target.closest && e.target.closest('[data-lb]');
+      if (!t) return;
+      img.src = t.dataset.lb; img.alt = t.dataset.cap || '';
+      cap.textContent = t.dataset.cap || '';
+      full.href = t.dataset.full || t.dataset.lb;
+      dlg.showModal();
+    });
+    dlg.addEventListener('click', function(e){ if (e.target === dlg) dlg.close(); });
+    dlg.querySelector('button.x').addEventListener('click', function(){ dlg.close(); });
+  } else {
+    [].forEach.call(doc.querySelectorAll('[data-lb]'), function(t){
+      t.addEventListener('click', function(){ window.open(t.dataset.full || t.dataset.lb, '_blank'); });
+    });
+  }
+
+  /* test bays */
+  var bays = [].slice.call(doc.querySelectorAll('.bay'));
+  var det = doc.getElementById('bay-detail');
+  bays.forEach(function(b){
+    b.addEventListener('click', function(){
+      bays.forEach(function(o){ o.setAttribute('aria-pressed', o === b ? 'true' : 'false'); });
+      det.textContent = b.dataset.detail;
+    });
+  });
+
+  /* active nav link */
+  var links = [].slice.call(doc.querySelectorAll('.nav li a'));
+  if ('IntersectionObserver' in window) {
+    var map = {};
+    links.forEach(function(a){ map[a.getAttribute('href').slice(1)] = a; });
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (en.isIntersecting && map[en.target.id]) {
+          links.forEach(function(a){ a.removeAttribute('aria-current'); });
+          map[en.target.id].setAttribute('aria-current', 'true');
+        }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    Object.keys(map).forEach(function(id){ var s = doc.getElementById(id); if (s) io.observe(s); });
+  }
+})();
+
+</script>
+</body></html>
